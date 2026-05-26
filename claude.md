@@ -58,12 +58,14 @@ The following skills must **only run when the user explicitly invokes them** (e.
 
 When Bruce pastes an Instagram URL, YouTube URL, website URL, or raw recipe text, treat it as a request to add a new recipe and run the full pipeline below end-to-end without stopping to ask for confirmation at each step. Pushing to `origin/main` at the end is pre-authorised for this workflow — only pause if something is ambiguous (e.g. multiple recipes in one post) or if a step fails.
 
+**Always prefer HTTP-only tools (`curl`, `WebFetch`, `yt-dlp`) over the playwright MCP browser** so the workflow runs in cloud sandboxes (claude.ai/code on mobile) where no headed browser exists. Only fall back to playwright if the HTTP path is blocked by a login wall.
+
 ### Steps
 
 1. **Extract the recipe.**
    - Pasted text → use as-is.
-   - Instagram URL → navigate with `mcp__playwright-firefox__browser_navigate` and pull the caption via JS (`document.querySelector('meta[property="og:description"]')` or the article element). Chrome is often locked by another session; firefox/webkit usually works.
-   - YouTube URL → fetch the page and read the description meta tag, or use `yt-dlp --skip-download --print description <url>`.
+   - Instagram URL → `curl -sL -A "Mozilla/5.0" "<url>"` then parse `<meta property="og:title">`, `<meta property="og:description">`, and `<meta property="og:image">` from the HTML. The caption is in `og:description`. If the response is a login wall, fall back to `mcp__playwright-firefox__browser_navigate` + reading the same meta tags via JS.
+   - YouTube URL → `yt-dlp --skip-download --print "%(title)s\n---\n%(description)s" "<url>"` (preferred; gets the full description rather than the truncated og tag). Fallback: `WebFetch` the URL.
    - Website URL → `WebFetch` with a prompt asking for title, ingredients, method, time, servings.
 
 2. **Write the markdown file** at `recipes/<slug>.md`. Slug = kebab-case, descriptive but short (e.g. `pad-thai-chicken-prawns`). Use the existing frontmatter shape:
@@ -81,10 +83,10 @@ When Bruce pastes an Instagram URL, YouTube URL, website URL, or raw recipe text
 
 3. **Pick tags from the existing vocabulary** in `recipes/index.json`: `mains`, `veggie`, `meat`, `seafood`, `fish`, `pasta`, `rice`, `side`, `brunch`, `sweet`, `quick` (≤30 min), `slow` (>60 min). Add new tags sparingly.
 
-4. **Grab the hero image.**
-   - **Instagram:** read `meta[property="og:image"]` via playwright-firefox, then `curl -sL -o images/<slug>.jpg "<url>"`. Preserve the full query string.
-   - **YouTube:** default to `https://img.youtube.com/vi/<videoId>/maxresdefault.jpg` (fall back to `hqdefault.jpg` if 404). If Bruce specifies "grab the best frame" or a timestamp, use `yt-dlp -f mp4 -o /tmp/<slug>.mp4 <url>` then `ffmpeg -ss <HH:MM:SS> -i /tmp/<slug>.mp4 -frames:v 1 -q:v 2 images/<slug>.jpg`. Default timestamp if unspecified: 75% through the video (usually the plated shot).
-   - **Website:** `meta[property="og:image"]` first, fall back to the largest in-page `<img>`.
+4. **Grab the hero image.** All paths below are pure HTTP — no browser needed.
+   - **Instagram:** reuse the `og:image` URL captured in step 1, then `curl -sL -o images/<slug>.jpg "<url>"`. Preserve the full query string — Instagram CDN URLs expire fast, so download immediately.
+   - **YouTube:** default to `https://img.youtube.com/vi/<videoId>/maxresdefault.jpg` (fall back to `hqdefault.jpg` if 404). If Bruce specifies "grab the best frame" or a timestamp, use `yt-dlp -f mp4 -o /tmp/<slug>.mp4 "<url>"` then `ffmpeg -ss <HH:MM:SS> -i /tmp/<slug>.mp4 -frames:v 1 -q:v 2 images/<slug>.jpg`. Default timestamp if unspecified: 75% through the video (usually the plated shot).
+   - **Website:** read `meta[property="og:image"]` from the curled HTML. Fall back to the largest in-page `<img>` if absent.
    - Verify with `Read` on the saved jpg to confirm it's the dish, not a logo/avatar.
 
 5. **Rebuild the index:** `node build.js`. This regenerates `recipes/index.json` from frontmatter.
@@ -92,7 +94,7 @@ When Bruce pastes an Instagram URL, YouTube URL, website URL, or raw recipe text
 6. **Commit and push** to `origin/main` with a clear single-line message like `Add <recipe title> recipe`. Stage only the new recipe, the image, and `recipes/index.json` — never `.playwright-mcp/` or other scratch dirs.
 
 ### Gotchas
-- The chrome MCP browser is frequently locked — reach for `playwright-firefox` first.
+- HTTP-first means the pipeline works the same on Bruce's laptop and on claude.ai/code from his phone. Don't reach for playwright unless `curl` actually returned a login wall.
 - `og:image` URLs from Instagram CDN expire; download immediately, don't store the URL.
 - Always include `source:` in frontmatter so the recipe links back to the creator.
 - If the source video shows multiple dishes, ask which one before extracting.
