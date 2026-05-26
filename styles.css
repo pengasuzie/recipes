@@ -1,0 +1,256 @@
+:root {
+  --bg: #f6f0e6;
+  --paper: #fffaf2;
+  --ink: #1f1a16;
+  --ink-soft: #5a4f44;
+  --line: #e6ddce;
+  --accent: #c4502a;
+  --accent-soft: #f6dccd;
+  --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(60,40,20,0.06);
+  --radius: 14px;
+  --safe-top: env(safe-area-inset-top, 0);
+  --safe-bottom: env(safe-area-inset-bottom, 0);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  font-size: 17px;
+  line-height: 1.5;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-bottom: var(--safe-bottom);
+}
+
+#app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 8px;
+  padding: calc(var(--safe-top) + 10px) 12px 10px;
+  background: rgba(246, 240, 230, 0.92);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+#app-title {
+  margin: 0;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.icon-btn {
+  background: transparent;
+  border: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.icon-btn.invisible { visibility: hidden; pointer-events: none; }
+.icon-btn:active { background: var(--accent-soft); }
+
+#app-main { padding: 12px 12px 32px; max-width: 720px; margin: 0 auto; }
+
+.search-bar {
+  margin-bottom: 10px;
+}
+#search {
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 0 12px;
+  font-size: 16px;
+  color: var(--ink);
+  outline: none;
+}
+#search:focus { border-color: var(--accent); }
+
+.tag-row {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 8px;
+  padding: 4px 0 12px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.tag-row::-webkit-scrollbar { display: none; }
+.tag-chip {
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink-soft);
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.tag-chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+@media (min-width: 540px) {
+  .grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+}
+
+.card {
+  display: block;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow);
+  -webkit-tap-highlight-color: transparent;
+}
+.card:active { transform: scale(0.99); }
+.card-img {
+  aspect-ratio: 4 / 3;
+  background: var(--accent-soft) center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 28px;
+}
+.card-img.no-photo::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 36px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  opacity: 0.4;
+}
+.card-body { padding: 10px 12px 12px; }
+.card-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+#empty-state { text-align: center; color: var(--ink-soft); padding: 40px 0; }
+
+/* Detail view */
+#detail-view { padding-bottom: 40px; }
+.hero {
+  margin: -12px -12px 16px;
+  aspect-ratio: 4 / 3;
+  background: var(--accent-soft) center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+.hero.no-photo::after {
+  content: "no photo yet";
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.detail-title {
+  font-size: 26px;
+  line-height: 1.15;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+.detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+.detail-meta .tag {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 10px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+.open-source {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  height: 48px;
+  border-radius: 12px;
+  margin: 8px 0 18px;
+}
+.open-source:active { opacity: 0.85; }
+.notes {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+}
+.notes h2 { font-size: 16px; margin: 0 0 8px; }
+.notes h3 { font-size: 15px; margin: 14px 0 4px; }
+.notes p, .notes li { margin: 6px 0; }
+.notes ul, .notes ol { padding-left: 22px; }
+.notes a { color: var(--accent); }
+.book-credit {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* Cook mode */
+body.cook-mode { background: #1a1612; color: #f7ecdc; }
+body.cook-mode #app-header {
+  background: rgba(26, 22, 18, 0.92);
+  border-bottom-color: #3a312a;
+}
+body.cook-mode .icon-btn { color: #f5b89b; }
+body.cook-mode .icon-btn:active { background: #3a312a; }
+body.cook-mode #detail-view { font-size: 20px; }
+body.cook-mode .detail-title { font-size: 32px; }
+body.cook-mode .notes { background: #241f1a; border-color: #3a312a; font-size: 19px; line-height: 1.6; }
+body.cook-mode .notes a { color: #f5b89b; }
+body.cook-mode .detail-meta .tag { background: #3a2620; color: #f5b89b; }
+body.cook-mode .book-credit { color: #b9a999; }

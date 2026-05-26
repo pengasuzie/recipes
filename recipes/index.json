@@ -1,0 +1,288 @@
+[
+  {
+    "slug": "cannelloni-enchiladas-salsa-roja",
+    "title": "Cannelloni Enchiladas with Salsa Roja",
+    "image": null,
+    "tags": [
+      "mains",
+      "veggie",
+      "pasta",
+      "slow"
+    ],
+    "time": 90,
+    "servings": 6,
+    "source": "https://thehappyfoodie.co.uk/articles/10-dishes-youll-discover-in-ixta-belfrages-mezcla/",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "cassava-fries-chilli-butter",
+    "title": "Cassava Fries with Chilli Butter",
+    "image": null,
+    "tags": [
+      "veggie",
+      "side"
+    ],
+    "time": 45,
+    "servings": 4,
+    "source": "https://thehappyfoodie.co.uk/articles/10-dishes-youll-discover-in-ixta-belfrages-mezcla/",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "chicken-pineapple-nduja-bake",
+    "title": "Chicken, Pineapple and 'Nduja Bake",
+    "image": null,
+    "tags": [
+      "mains",
+      "meat",
+      "slow"
+    ],
+    "time": 60,
+    "servings": 4,
+    "source": "https://thehappyfoodie.co.uk/recipes/ixta-belfrage-chicken-pineapple-and-nduja-bake/",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "chiles-rellenos-salsa-roja-risotto",
+    "title": "Chiles Rellenos with Salsa Roja Risotto",
+    "image": null,
+    "tags": [
+      "mains",
+      "veggie",
+      "rice",
+      "slow"
+    ],
+    "time": 90,
+    "servings": 4,
+    "source": "https://thehappyfoodie.co.uk/recipes/ixta-belfrage-chiles-rellenos-with-salsa-roja-risotto/",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "confit-squid-aubergine-pasta",
+    "title": "Confit Squid & Aubergine Pasta",
+    "image": null,
+    "tags": [
+      "mains",
+      "seafood",
+      "pasta",
+      "slow"
+    ],
+    "time": 90,
+    "servings": 4,
+    "source": "https://thehappyfoodie.co.uk/articles/10-dishes-youll-discover-in-ixta-belfrages-mezcla/",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "giant-cheese-on-toast-honey-urfa-butter",
+    "title": "Giant Cheese on Toast with Honey & Urfa Butter",
+    "image": null,
+    "tags": [
+      "veggie",
+      "brunch",
+      "quick"
+    ],
+    "time": 25,
+    "servings": 4,
+    "source": "https://thehappyfoodie.co.uk/articles/10-dishes-youll-discover-in-ixta-belfrages-mezcla/",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "mussels-orzo-coconut-saffron-stew",
+    "title": "Mussels & Orzo in Coconut & Saffron Stew",
+    "image": null,
+    "tags": [
+      "mains",
+      "seafood",
+      "pasta",
+      "quick"
+    ],
+    "time": 30,
+    "servings": 4,
+    "source": "https://www.stylist.co.uk/food-drink/mezcla-ixta-belfrage-recipes-inventive-flavour-combinations/679321",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "oyster-mushroom-noodles-caraway-onions",
+    "title": "Oyster Mushroom Noodles with Caramelised Caraway Onions",
+    "image": null,
+    "tags": [
+      "mains",
+      "veggie",
+      "quick"
+    ],
+    "time": 30,
+    "servings": 4,
+    "source": "https://thehappyfoodie.co.uk/articles/cook-from-the-book-mezcla/",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "passion-fruit-pudim",
+    "title": "Passion Fruit Pudim",
+    "image": null,
+    "tags": [
+      "sweet",
+      "slow"
+    ],
+    "time": 90,
+    "servings": 8,
+    "source": "https://thehappyfoodie.co.uk/recipes/ixta-belfrages-passionfruit-and-coconut-pudim/",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "piri-piri-tofu-crispy-orzo",
+    "title": "Piri Piri Tofu with Crispy Orzo",
+    "image": null,
+    "tags": [
+      "mains",
+      "veggie",
+      "pasta",
+      "quick"
+    ],
+    "time": 30,
+    "servings": 4,
+    "source": "https://thehappyfoodie.co.uk/articles/cook-from-the-book-mezcla/",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "porcini-ragu",
+    "title": "Porcini Ragù",
+    "image": null,
+    "tags": [
+      "mains",
+      "veggie",
+      "pasta",
+      "quick"
+    ],
+    "time": 30,
+    "servings": 4,
+    "source": "https://thehappyfoodie.co.uk/articles/cook-from-the-book-mezcla/",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "prawn-lasagne-habanero-oil",
+    "title": "Prawn Lasagne with Habanero Oil",
+    "image": null,
+    "tags": [
+      "mains",
+      "seafood",
+      "pasta",
+      "slow"
+    ],
+    "time": 90,
+    "servings": 6,
+    "source": "https://thehappyfoodie.co.uk/recipes/ixta-belfrages-prawn-and-requeijao-lasagne-with-dende-chilli-oil/",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "roasted-cabbage-mango-harissa",
+    "title": "Roasted Cabbage with Mango & Harissa",
+    "image": null,
+    "tags": [
+      "veggie",
+      "side",
+      "quick"
+    ],
+    "time": 30,
+    "servings": 4,
+    "source": "https://www.greatbritishchefs.com/recipes/roasted-cabbage-mango-harissa-sauce-recipe",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "scallops-curried-onions-lime",
+    "title": "Scallops with Curried Onions & Lime",
+    "image": null,
+    "tags": [
+      "mains",
+      "seafood",
+      "quick"
+    ],
+    "time": 30,
+    "servings": 4,
+    "source": "https://thehappyfoodie.co.uk/articles/10-dishes-youll-discover-in-ixta-belfrages-mezcla/",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "short-ribs-mole-sauce",
+    "title": "Short Ribs with Mole-inspired Sauce",
+    "image": null,
+    "tags": [
+      "mains",
+      "meat",
+      "slow"
+    ],
+    "time": 300,
+    "servings": 4,
+    "source": "https://thehappyfoodie.co.uk/articles/10-dishes-youll-discover-in-ixta-belfrages-mezcla/",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "spinach-herb-dumplings-cherry-tomato",
+    "title": "Spinach & Herb Dumplings with Cherry Tomato Sauce",
+    "image": null,
+    "tags": [
+      "mains",
+      "veggie",
+      "slow"
+    ],
+    "time": 75,
+    "servings": 4,
+    "source": "https://thehappyfoodie.co.uk/articles/10-dishes-youll-discover-in-ixta-belfrages-mezcla/",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "sticky-coconut-rice-cake-turmeric-tomatoes",
+    "title": "Sticky Coconut Rice Cake with Turmeric Tomatoes",
+    "image": null,
+    "tags": [
+      "mains",
+      "veggie",
+      "rice",
+      "slow"
+    ],
+    "time": 90,
+    "servings": 4,
+    "source": "https://www.wolfandbadger.com/ca/magazine/inspiration/inspiration/an-ixta-belfrage-recipe-sticky-coconut-rice-cake-with-turmeric-tomatoes/",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "tomato-salad-tahini-ginger-crumpet-croutons",
+    "title": "Tomato Salad with Tahini Ginger Sauce & Crumpet Croutons",
+    "image": null,
+    "tags": [
+      "veggie",
+      "side",
+      "quick"
+    ],
+    "time": 25,
+    "servings": 4,
+    "source": "https://www.nigella.com/recipes/guests/tomato-tahini-and-ginger-salad-with-crumpet-croutons",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "torta-ahogada",
+    "title": "Torta Ahogada (Drowned Sandwiches)",
+    "image": null,
+    "tags": [
+      "mains",
+      "meat",
+      "slow"
+    ],
+    "time": 75,
+    "servings": 4,
+    "source": "https://thehappyfoodie.co.uk/articles/10-dishes-youll-discover-in-ixta-belfrages-mezcla/",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "whole-baked-sea-bass-tangerine",
+    "title": "Whole Baked Sea Bass with Tangerine",
+    "image": null,
+    "tags": [
+      "mains",
+      "fish",
+      "slow"
+    ],
+    "time": 60,
+    "servings": 4,
+    "source": "https://thehappyfoodie.co.uk/recipes/ixta-belfrage-brown-butter-sea-bass-with-tangerine-dipping-sauce/",
+    "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  }
+]
