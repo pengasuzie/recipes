@@ -54,6 +54,51 @@ The following skills must **only run when the user explicitly invokes them** (e.
 
 ---
 
+## Adding new recipes from a URL or pasted text
+
+When Bruce pastes an Instagram URL, YouTube URL, website URL, or raw recipe text, treat it as a request to add a new recipe and run the full pipeline below end-to-end without stopping to ask for confirmation at each step. Pushing to `origin/main` at the end is pre-authorised for this workflow — only pause if something is ambiguous (e.g. multiple recipes in one post) or if a step fails.
+
+### Steps
+
+1. **Extract the recipe.**
+   - Pasted text → use as-is.
+   - Instagram URL → navigate with `mcp__playwright-firefox__browser_navigate` and pull the caption via JS (`document.querySelector('meta[property="og:description"]')` or the article element). Chrome is often locked by another session; firefox/webkit usually works.
+   - YouTube URL → fetch the page and read the description meta tag, or use `yt-dlp --skip-download --print description <url>`.
+   - Website URL → `WebFetch` with a prompt asking for title, ingredients, method, time, servings.
+
+2. **Write the markdown file** at `recipes/<slug>.md`. Slug = kebab-case, descriptive but short (e.g. `pad-thai-chicken-prawns`). Use the existing frontmatter shape:
+   ```
+   ---
+   title: ...
+   image: images/<slug>.jpg
+   tags: [...]
+   time: <minutes>
+   servings: <n>
+   source: <original URL>
+   ---
+   ```
+   Body structure: short intro paragraph, `## Ingredients` (with `###` sub-headings for sauces/components), `## Method` as a numbered list, then `## My notes` at the bottom for Bruce's tweaks. Reformat the source's instructions in our own structure — don't paste long verbatim blocks.
+
+3. **Pick tags from the existing vocabulary** in `recipes/index.json`: `mains`, `veggie`, `meat`, `seafood`, `fish`, `pasta`, `rice`, `side`, `brunch`, `sweet`, `quick` (≤30 min), `slow` (>60 min). Add new tags sparingly.
+
+4. **Grab the hero image.**
+   - **Instagram:** read `meta[property="og:image"]` via playwright-firefox, then `curl -sL -o images/<slug>.jpg "<url>"`. Preserve the full query string.
+   - **YouTube:** default to `https://img.youtube.com/vi/<videoId>/maxresdefault.jpg` (fall back to `hqdefault.jpg` if 404). If Bruce specifies "grab the best frame" or a timestamp, use `yt-dlp -f mp4 -o /tmp/<slug>.mp4 <url>` then `ffmpeg -ss <HH:MM:SS> -i /tmp/<slug>.mp4 -frames:v 1 -q:v 2 images/<slug>.jpg`. Default timestamp if unspecified: 75% through the video (usually the plated shot).
+   - **Website:** `meta[property="og:image"]` first, fall back to the largest in-page `<img>`.
+   - Verify with `Read` on the saved jpg to confirm it's the dish, not a logo/avatar.
+
+5. **Rebuild the index:** `node build.js`. This regenerates `recipes/index.json` from frontmatter.
+
+6. **Commit and push** to `origin/main` with a clear single-line message like `Add <recipe title> recipe`. Stage only the new recipe, the image, and `recipes/index.json` — never `.playwright-mcp/` or other scratch dirs.
+
+### Gotchas
+- The chrome MCP browser is frequently locked — reach for `playwright-firefox` first.
+- `og:image` URLs from Instagram CDN expire; download immediately, don't store the URL.
+- Always include `source:` in frontmatter so the recipe links back to the creator.
+- If the source video shows multiple dishes, ask which one before extracting.
+
+---
+
 ## Voice & Tone (when drafting *as Bruce*)
 
 When writing copy, emails, posts, or any first-person prose for Bruce:
