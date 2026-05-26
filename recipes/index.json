@@ -115,6 +115,21 @@
     "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
   },
   {
+    "slug": "pad-thai-chicken-prawns",
+    "title": "Pad Thai with Chicken & Prawns",
+    "image": "images/pad-thai-chicken-prawns.jpg",
+    "tags": [
+      "mains",
+      "meat",
+      "seafood",
+      "quick"
+    ],
+    "time": 30,
+    "servings": 4,
+    "source": "https://www.instagram.com/p/C9ebJmqJmHE/",
+    "book": null
+  },
+  {
     "slug": "passion-fruit-pudim",
     "title": "Passion Fruit Pudim",
     "image": null,
