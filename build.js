@@ -2,7 +2,7 @@
 // Scans recipes/*.md, parses frontmatter, writes recipes/index.json.
 // No deps — pure Node.
 
-import { readdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readdirSync, readFileSync, writeFileSync, existsSync, statSync } from "node:fs";
 import { join, basename, isAbsolute } from "node:path";
 import { fileURLToPath } from "node:url";
 import { dirname } from "node:path";
@@ -37,16 +37,22 @@ const files = existsSync(recipesDir)
   ? readdirSync(recipesDir).filter(f => f.endsWith(".md"))
   : [];
 
+function mtime(absPath) {
+  try { return statSync(absPath).mtimeMs; } catch { return 0; }
+}
+
 const entries = files.map(f => {
   const slug = basename(f, ".md");
-  const text = readFileSync(join(recipesDir, f), "utf8");
+  const mdAbs = join(recipesDir, f);
+  const text = readFileSync(mdAbs, "utf8");
   const fm = parseFrontmatter(text);
   // Only emit an image path if the file actually exists on disk —
   // otherwise the browser logs a 404 for the suggested-but-unfilled slot.
   let image = null;
+  let imageMtime = 0;
   if (fm.image) {
     const abs = isAbsolute(fm.image) ? fm.image : join(root, fm.image);
-    if (existsSync(abs)) image = fm.image;
+    if (existsSync(abs)) { image = fm.image; imageMtime = mtime(abs); }
   }
   return {
     slug,
@@ -58,10 +64,12 @@ const entries = files.map(f => {
     source: fm.source || null,
     video: fm.video || null,
     book: fm.book || null,
+    updated: Math.max(mtime(mdAbs), imageMtime),
   };
 });
 
-entries.sort((a, b) => a.title.localeCompare(b.title));
+// Newest edits first — touching the .md or the image floats a recipe to the top.
+entries.sort((a, b) => b.updated - a.updated);
 
 writeFileSync(join(recipesDir, "index.json"), JSON.stringify(entries, null, 2) + "\n");
 console.log(`Wrote ${entries.length} recipes to recipes/index.json`);
