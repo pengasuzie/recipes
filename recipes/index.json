@@ -91,6 +91,21 @@
     "book": null
   },
   {
+    "slug": "brussels-sprouts-yaourt-grec",
+    "title": "Charred Brussels Sprouts with Greek Yoghurt & Hazelnuts",
+    "image": "images/brussels-sprouts-yaourt-grec.jpg",
+    "tags": [
+      "side",
+      "veggie",
+      "quick"
+    ],
+    "time": 25,
+    "servings": 4,
+    "source": "https://www.instagram.com/p/CzENTCMNynd/",
+    "video": "https://www.instagram.com/p/CzENTCMNynd/",
+    "book": null
+  },
+  {
     "slug": "chicken-pineapple-nduja-bake",
     "title": "Chicken, Pineapple and 'Nduja Bake",
     "image": null,
