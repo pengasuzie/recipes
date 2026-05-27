@@ -77,8 +77,14 @@ When Bruce pastes an Instagram URL, YouTube URL, website URL, or raw recipe text
    time: <minutes>
    servings: <n>
    source: <original URL>
+   video: <video URL>   # optional — see rule below
    ---
    ```
+   **`video:` rule:** include a `video:` field whenever there's a video of the dish being made.
+   - If the source is itself a video (Instagram Reel, YouTube, TikTok), set `video:` to the same URL as `source:`. The app dedupes so only one button renders.
+   - If the source is an article that embeds or links to a YouTube/Vimeo/etc. video, extract that video URL and set `video:` to it (keep `source:` as the article URL).
+   - If the source is text-only with no video, omit `video:`.
+
    Body structure: short intro paragraph, `## Ingredients` (with `###` sub-headings for sauces/components), `## Method` as a numbered list, then `## My notes` at the bottom for Bruce's tweaks. Reformat the source's instructions in our own structure — don't paste long verbatim blocks.
 
 3. **Pick tags from the existing vocabulary** in `recipes/index.json`: `mains`, `veggie`, `meat`, `seafood`, `fish`, `pasta`, `rice`, `side`, `brunch`, `sweet`, `quick` (≤30 min), `slow` (>60 min). Add new tags sparingly.

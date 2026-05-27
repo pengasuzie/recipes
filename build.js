@@ -56,6 +56,7 @@ const entries = files.map(f => {
     time: fm.time || null,
     servings: fm.servings || null,
     source: fm.source || null,
+    video: fm.video || null,
     book: fm.book || null,
   };
 });

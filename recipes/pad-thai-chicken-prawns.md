@@ -5,6 +5,7 @@ tags: [mains, meat, seafood, quick]
 time: 30
 servings: 4
 source: https://www.instagram.com/p/C9ebJmqJmHE/
+video: https://www.instagram.com/p/C9ebJmqJmHE/
 ---
 
 A quick, delicious meal that's sweet, sour, salty and a little smokey.

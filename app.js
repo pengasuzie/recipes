@@ -127,7 +127,10 @@ async function renderDetail(slug) {
     : `<div class="hero no-photo"></div>`;
   const tagsHtml = (recipe.tags || []).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("");
   const meta = [recipe.time ? `${recipe.time} min` : null, recipe.servings ? `serves ${recipe.servings}` : null].filter(Boolean).join(" · ");
-  const sourceBtn = recipe.source
+  const videoBtn = recipe.video
+    ? `<a class="open-source" href="${recipe.video}" target="_blank" rel="noopener">▶ Watch the video</a>`
+    : "";
+  const sourceBtn = recipe.source && recipe.source !== recipe.video
     ? `<a class="open-source" href="${recipe.source}" target="_blank" rel="noopener">Open original ↗</a>`
     : "";
   const credit = recipe.book ? `<p class="book-credit">${escapeHtml(recipe.book)}</p>` : "";
@@ -135,7 +138,7 @@ async function renderDetail(slug) {
     ${img}
     <h1 class="detail-title">${escapeHtml(recipe.title)}</h1>
     <div class="detail-meta">${tagsHtml}${meta ? `<span>${meta}</span>` : ""}</div>
-    ${sourceBtn}
+    ${videoBtn}${sourceBtn}
     <div class="notes">${notes ? renderMarkdown(notes) : "<p><em>No notes yet. Add your own under <code>recipes/" + slug + ".md</code>.</em></p>"}</div>
     ${credit}
   `;
