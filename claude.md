@@ -64,7 +64,7 @@ When Bruce pastes an Instagram URL, YouTube URL, website URL, or raw recipe text
 
 1. **Extract the recipe.**
    - Pasted text → use as-is.
-   - Instagram URL → `curl -sL -A "Mozilla/5.0" "<url>"` then parse `<meta property="og:title">`, `<meta property="og:description">`, and `<meta property="og:image">` from the HTML. The caption is in `og:description`. If the response is a login wall, fall back to `mcp__playwright-firefox__browser_navigate` + reading the same meta tags via JS.
+   - Instagram URL → **caption:** `yt-dlp --skip-download --print "TITLE: %(title)s\n---\nDESC: %(description)s\n---\nUPLOADER: %(uploader)s" "<url>"`. Instagram stopped serving `og:description` to scrapers, so don't bother with `curl` for the caption — it'll be empty. **Image:** `curl -sL -A "facebookexternalhit/1.1" "<url>"` then parse `<meta property="og:image">`. The default browser UA returns a page without og tags; the Facebook crawler UA is the one that works. If both paths fail (rare), fall back to `mcp__playwright-firefox__browser_navigate`.
    - YouTube URL → `yt-dlp --skip-download --print "%(title)s\n---\n%(description)s" "<url>"` (preferred; gets the full description rather than the truncated og tag). Fallback: `WebFetch` the URL.
    - Website URL → `WebFetch` with a prompt asking for title, ingredients, method, time, servings.
 
