@@ -77,6 +77,21 @@
     "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
   },
   {
+    "slug": "coconut-lime-chicken-thighs",
+    "title": "Crispy Coconut Lime Chicken",
+    "image": "images/coconut-lime-chicken-thighs.jpg",
+    "tags": [
+      "mains",
+      "meat",
+      "quick"
+    ],
+    "time": 35,
+    "servings": 2,
+    "source": "https://www.instagram.com/p/C6qmMMuIl4h/",
+    "video": "https://www.instagram.com/p/C6qmMMuIl4h/",
+    "book": null
+  },
+  {
     "slug": "giant-cheese-on-toast-honey-urfa-butter",
     "title": "Giant Cheese on Toast with Honey & Urfa Butter",
     "image": null,
