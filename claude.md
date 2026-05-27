@@ -107,6 +107,35 @@ When Bruce pastes an Instagram URL, YouTube URL, website URL, or raw recipe text
 
 ---
 
+## Pasted images (attached image OR image URL)
+
+When Bruce pastes/attaches an image — either as a direct attachment or an image URL (`*.jpg`, `*.png`, `*.webp`, CDN links like `assets3.thrillist.com/...`, etc.) — with any accompanying text, do this:
+
+1. **Identify the target recipe** from the accompanying text. Try in order:
+   - Exact slug match in `recipes/<slug>.md`.
+   - Fuzzy title match: scan `recipes/index.json` titles for a match against keywords in Bruce's text (e.g. "cannelloni" → `cannelloni-enchiladas-salsa-roja`).
+   - If two or more recipes plausibly match, **ask which one** before writing.
+   - If nothing matches, treat it as a new recipe and run the standard pipeline above, using the pasted image as the hero.
+
+2. **Save the image as the hero** at `images/<slug>.jpg`:
+   - Image URL → `curl -sL -o images/<slug>.jpg "<url>"`.
+   - Direct attachment → write the binary to `images/<slug>.jpg` (overwrite if it exists).
+   - Always `Read` the saved jpg to verify it's the dish, not a logo/avatar/wrong recipe.
+
+3. **Apply any text changes Bruce mentioned** (add an ingredient, fix a step, change servings, etc.). If he didn't ask for any text changes, leave the body alone — just swap the image.
+
+4. **Sanity-check formatting** on the existing markdown and fix anything off:
+   - Frontmatter has `title`, `image`, `tags`, `time`, `servings`, `source` (and `video:` if applicable).
+   - Body order: short intro → `## Ingredients` (with `###` subheadings for components) → `## Method` numbered list → `## My notes`.
+   - Bullet lists for ingredients (not paragraphs), numbered list for method, no verbatim copy-paste blobs from the source.
+   - Australian English spelling, metric units, sensible quantity formatting.
+
+5. **Rebuild and commit:** `node build.js`, then commit the markdown, image, and `recipes/index.json` with a message like `Update <recipe title> image` or `Reformat <recipe title> recipe`. Push to `origin/main`.
+
+6. **Bump the service worker** whenever you overwrite an existing file (`.md` body OR an `images/*.jpg` that already existed). Increment `VERSION` in `sw.js` (e.g. `v2` → `v3`) in the same commit so old cached copies are evicted. Brand-new files (a recipe or image that didn't exist before) don't need a bump — there's no stale cache to bust.
+
+---
+
 ## Voice & Tone (when drafting *as Bruce*)
 
 When writing copy, emails, posts, or any first-person prose for Bruce:
