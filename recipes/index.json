@@ -137,6 +137,21 @@
     "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
   },
   {
+    "slug": "greek-chicken-potatoes-yogurt",
+    "title": "One-Pan Greek Chicken and Potatoes with Garlicky Yogurt Sauce",
+    "image": "images/greek-chicken-potatoes-yogurt.jpg",
+    "tags": [
+      "mains",
+      "meat",
+      "slow"
+    ],
+    "time": 75,
+    "servings": 2,
+    "source": "https://www.instagram.com/p/C38JT1QukHr/",
+    "video": "https://www.instagram.com/p/C38JT1QukHr/",
+    "book": null
+  },
+  {
     "slug": "oyster-mushroom-noodles-caraway-onions",
     "title": "Oyster Mushroom Noodles with Caramelised Caraway Onions",
     "image": null,
