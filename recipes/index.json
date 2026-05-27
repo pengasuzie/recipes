@@ -198,6 +198,21 @@
     "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
   },
   {
+    "slug": "giant-gambas-citrus-chili-butter",
+    "title": "Giant Gambas with Citrus Chilli Butter",
+    "image": "images/giant-gambas-citrus-chili-butter.jpg",
+    "tags": [
+      "mains",
+      "seafood",
+      "quick"
+    ],
+    "time": 20,
+    "servings": 2,
+    "source": "https://www.instagram.com/p/C1ND1wytOkQ/",
+    "video": "https://www.instagram.com/p/C1ND1wytOkQ/",
+    "book": null
+  },
+  {
     "slug": "kotopoulo-lemonato",
     "title": "Kotopoulo me Patates sto Fourno Lemonato (Greek Lemon Roast Chicken)",
     "image": "images/kotopoulo-lemonato.jpg",
@@ -305,6 +320,21 @@
     "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
   },
   {
+    "slug": "paccheri-alla-vodka-stracciatella",
+    "title": "Paccheri alla Vodka with Stracciatella",
+    "image": "images/paccheri-alla-vodka-stracciatella.jpg",
+    "tags": [
+      "mains",
+      "pasta",
+      "veggie"
+    ],
+    "time": 45,
+    "servings": 2,
+    "source": "https://www.instagram.com/p/CxCDdfNrCAb/",
+    "video": "https://www.instagram.com/p/CxCDdfNrCAb/",
+    "book": null
+  },
+  {
     "slug": "pad-thai-chicken-prawns",
     "title": "Pad Thai with Chicken & Prawns",
     "image": "images/pad-thai-chicken-prawns.jpg",
@@ -318,6 +348,23 @@
     "servings": 4,
     "source": "https://www.instagram.com/p/C9ebJmqJmHE/",
     "video": "https://www.instagram.com/p/C9ebJmqJmHE/",
+    "book": null
+  },
+  {
+    "slug": "pan-con-tomate-sardines-salsa-verde",
+    "title": "Pan con Tomate with Sardines & Salsa Verde",
+    "image": "images/pan-con-tomate-sardines-salsa-verde.jpg",
+    "tags": [
+      "mains",
+      "seafood",
+      "fish",
+      "brunch",
+      "quick"
+    ],
+    "time": 15,
+    "servings": 2,
+    "source": "https://www.instagram.com/p/C2aYVdlt5n0/",
+    "video": "https://www.instagram.com/p/C2aYVdlt5n0/",
     "book": null
   },
   {
