@@ -1,5 +1,21 @@
 [
   {
+    "slug": "asian-baked-fish-greens",
+    "title": "Asian Baked Fish with Greens",
+    "image": "images/asian-baked-fish-greens.jpg",
+    "tags": [
+      "mains",
+      "fish",
+      "seafood",
+      "quick"
+    ],
+    "time": 30,
+    "servings": 4,
+    "source": "https://www.instagram.com/p/C6GQRP6vYBm/",
+    "video": "https://www.instagram.com/p/C6GQRP6vYBm/",
+    "book": null
+  },
+  {
     "slug": "baked-onions-honey-goat-cheese",
     "title": "Baked Onions with Goat Cheese & Honey",
     "image": "images/baked-onions-honey-goat-cheese.jpg",
@@ -88,6 +104,20 @@
     "source": "https://thehappyfoodie.co.uk/recipes/ixta-belfrage-chiles-rellenos-with-salsa-roja-risotto/",
     "video": null,
     "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "coconut-dal",
+    "title": "Coconut Dal",
+    "image": "images/coconut-dal.jpg",
+    "tags": [
+      "mains",
+      "veggie"
+    ],
+    "time": 45,
+    "servings": 4,
+    "source": "https://www.instagram.com/p/C5gak_LMqSB/",
+    "video": "https://www.instagram.com/p/C5gak_LMqSB/",
+    "book": null
   },
   {
     "slug": "confit-squid-aubergine-pasta",
@@ -273,6 +303,21 @@
     "source": "https://www.greatbritishchefs.com/recipes/roasted-cabbage-mango-harissa-sauce-recipe",
     "video": null,
     "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "salmon-tacos-avocado-crema",
+    "title": "Salmon Tacos with Avocado Crema",
+    "image": "images/salmon-tacos-avocado-crema.jpg",
+    "tags": [
+      "mains",
+      "fish",
+      "seafood"
+    ],
+    "time": 40,
+    "servings": 4,
+    "source": "https://www.instagram.com/p/C1zdaQcLeQI/",
+    "video": "https://www.instagram.com/p/C1zdaQcLeQI/",
+    "book": null
   },
   {
     "slug": "scallops-curried-onions-lime",
