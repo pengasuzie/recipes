@@ -151,6 +151,22 @@
     "book": null
   },
   {
+    "slug": "curd-rice",
+    "title": "Curd Rice",
+    "image": "images/curd-rice.jpg",
+    "tags": [
+      "side",
+      "veggie",
+      "rice",
+      "quick"
+    ],
+    "time": 10,
+    "servings": 4,
+    "source": "https://www.instagram.com/p/C4EF1YpIQrl/",
+    "video": "https://www.instagram.com/p/C4EF1YpIQrl/",
+    "book": null
+  },
+  {
     "slug": "giant-cheese-on-toast-honey-urfa-butter",
     "title": "Giant Cheese on Toast with Honey & Urfa Butter",
     "image": null,
@@ -164,6 +180,22 @@
     "source": "https://thehappyfoodie.co.uk/articles/10-dishes-youll-discover-in-ixta-belfrages-mezcla/",
     "video": null,
     "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "lemon-rice",
+    "title": "Lemon Rice",
+    "image": "images/lemon-rice.jpg",
+    "tags": [
+      "side",
+      "veggie",
+      "rice",
+      "quick"
+    ],
+    "time": 20,
+    "servings": 4,
+    "source": "https://www.instagram.com/p/C35x2YtIDZu/",
+    "video": "https://www.instagram.com/p/C35x2YtIDZu/",
+    "book": null
   },
   {
     "slug": "mussels-orzo-coconut-saffron-stew",
@@ -288,6 +320,21 @@
     "source": "https://thehappyfoodie.co.uk/recipes/ixta-belfrages-prawn-and-requeijao-lasagne-with-dende-chilli-oil/",
     "video": null,
     "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)"
+  },
+  {
+    "slug": "quick-falafel-tinned-chickpeas",
+    "title": "Quick Falafel with Tinned Chickpeas",
+    "image": "images/quick-falafel-tinned-chickpeas.jpg",
+    "tags": [
+      "mains",
+      "veggie",
+      "quick"
+    ],
+    "time": 15,
+    "servings": 4,
+    "source": "https://www.instagram.com/p/C6jCoHissij/",
+    "video": "https://www.instagram.com/p/C6jCoHissij/",
+    "book": null
   },
   {
     "slug": "roasted-cabbage-mango-harissa",
