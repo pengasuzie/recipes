@@ -1,5 +1,20 @@
 [
   {
+    "slug": "courgette-butterbean-bowl",
+    "title": "Creamy Garlicky Courgette and Butterbean Bowl",
+    "image": "images/courgette-butterbean-bowl.jpg",
+    "tags": [
+      "mains",
+      "veggie"
+    ],
+    "time": 70,
+    "servings": 4,
+    "source": "https://www.instagram.com/p/Cu2ULPoKtGI/",
+    "video": "https://www.instagram.com/p/Cu2ULPoKtGI/",
+    "book": null,
+    "updated": 1779939804357.6606
+  },
+  {
     "slug": "olive-baguettes",
     "title": "Olive Baguettes",
     "image": "images/olive-baguettes.jpg",
