@@ -8,8 +8,6 @@ source: https://www.instagram.com/p/CzENTCMNynd/
 video: https://www.instagram.com/p/CzENTCMNynd/
 ---
 
-Sprouts blanched then deeply caramelised in a hot pan, plated on a bed of garlicky cucumber-and-dill Greek yoghurt and topped with toasted hazelnuts. Paul Delrez (@delrezpaulchef) for Oikos — a side that's a meal.
-
 ## Ingredients
 
 - 500g Brussels sprouts, trimmed and halved
@@ -19,7 +17,7 @@ Sprouts blanched then deeply caramelised in a hot pan, plated on a bed of garlic
 - A handful of toasted hazelnuts, roughly crushed
 - A handful of watercress or pea shoots, to finish
 
-### Tzatziki-style yoghurt
+### Yaourt à la Grecque
 
 - 400g thick Greek yoghurt (Oikos or similar)
 - ½ cucumber, grated and squeezed of excess water
@@ -39,4 +37,3 @@ Sprouts blanched then deeply caramelised in a hot pan, plated on a bed of garlic
 
 ## My notes
 
-Halve the sprouts properly — uniform pieces means uniform char. Toasting the hazelnuts yourself in a dry pan for a couple of minutes makes a real difference.

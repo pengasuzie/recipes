@@ -8,7 +8,7 @@ source: https://www.instagram.com/p/C9ebJmqJmHE/
 video: https://www.instagram.com/p/C9ebJmqJmHE/
 ---
 
-A quick, delicious meal that's sweet, sour, salty and a little smokey.
+If you're craving a quick, delicious meal that's sweet, sour, salty and a little smokey, then this recipe is for you.
 
 ## Ingredients
 
@@ -23,7 +23,7 @@ A quick, delicious meal that's sweet, sour, salty and a little smokey.
 - 3 tbsp fish sauce
 - 2 tbsp oyster sauce
 
-### Stir fry
+### Stir Fry
 
 - 3 tbsp neutral oil
 - 3–4 garlic cloves, finely chopped

@@ -8,7 +8,7 @@ source: https://www.instagram.com/p/C35x2YtIDZu/
 video: https://www.instagram.com/p/C35x2YtIDZu/
 ---
 
-A South Indian tempered rice — bright, lemony, with mustard seeds popping and cashews going crisp in the pan. Great way to use up leftover rice, and the tempered topping keeps for weeks in a jar.
+This South Indian recipe is a great way to use up leftover rice. Make a big batch of the lemon mix and store it in the fridge for weeks. Then mix in with some cooked rice anytime and serve hot, warm or even cold.
 
 ## Ingredients
 
@@ -27,10 +27,9 @@ A South Indian tempered rice — bright, lemony, with mustard seeds popping and 
 
 ## Method
 
-1. Heat the oil in a small pan over medium. Fry the cashews until golden, then lift them out and set aside.
-2. Drop the mustard seeds into the same oil. When they start crackling, add the ginger, urid dal, hing, curry leaves, turmeric, and dried chillies. Fry on low for 3–4 minutes until the lentils turn golden.
-3. Stir the lemon juice and cashews back through the tempering. Season with salt and rest for 15 minutes.
-4. Tip the mixture over the cooked rice and toss until every grain is coated. Serve warm or cold.
+1. Fry the cashews until golden, strain and reserve.
+2. In the same oil, fry the mustard seeds. Once they crackle, add the remaining ingredients (except lemon juice and rice). Fry everything until the lentils are golden, about 3–4 minutes on a low heat.
+3. Stir in the lemon juice and cashews and allow to rest for 15 minutes. Then mix into the cooked rice and serve warm or cold.
 
 ## My notes
 

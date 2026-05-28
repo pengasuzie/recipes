@@ -8,7 +8,7 @@ source: https://www.instagram.com/p/C2ZN-ndIYyI/
 video: https://www.instagram.com/p/C2ZN-ndIYyI/
 ---
 
-A deep, slow-roasted tomato soup finished with crumbled feta, served with a torn-up slab of pillowy rosemary focaccia. The focaccia is a three-day affair (mostly hands-off), but the soup is a single oven session. Plan the bread on a Friday and you're eating Sunday lunch.
+This is a really long recipe (all really easy to do though) so I'm not messing about with a huge paragraph about how fabulously warming and comforting and just outstandingly delicious this Roast Tomato Soup with Rosemary Focaccia is… so deep breath, here we go.
 
 ## Ingredients
 

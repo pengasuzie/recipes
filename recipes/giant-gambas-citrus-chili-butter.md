@@ -8,8 +8,6 @@ source: https://www.instagram.com/p/C1ND1wytOkQ/
 video: https://www.instagram.com/p/C1ND1wytOkQ/
 ---
 
-Huge tiger prawns butterflied, pan-fried, then doused in a punchy citrus chilli butter blitzed with orange and lemon peel, fresh red chillies and smoked paprika. Paul Delrez (@delrezpaulchef) styling — the kind of dish you eat with your hands.
-
 ## Ingredients
 
 - 4 very large tiger prawns or gambas, head on, shell on

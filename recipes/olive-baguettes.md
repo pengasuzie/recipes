@@ -8,7 +8,7 @@ source: https://www.instagram.com/p/CxX4n_nKjVs/
 video: https://www.instagram.com/p/CxX4n_nKjVs/
 ---
 
-Crusty Mediterranean baguettes studded with olives and rosemary. Overnight cold ferment in the fridge does most of the work — under an hour of hands-on time.
+These Mediterranean olive baguettes are one of my favourite bakes so far — everybody can make these at home.
 
 ## Ingredients
 

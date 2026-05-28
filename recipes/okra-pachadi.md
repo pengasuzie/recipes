@@ -8,7 +8,7 @@ source: https://www.instagram.com/p/C3OAm41IZgi/
 video: https://www.instagram.com/p/C3OAm41IZgi/
 ---
 
-A South Indian yoghurt-and-coconut side from Karan Gokani. Great chilled or at room temperature — the kind of dish that turns up on a sadya banana leaf. Swap the okra for cucumber, beetroot, pineapple or pumpkin if you fancy.
+Today's recipe features one of my favourite ingredients — okra. This South Indian dish is great as a side, either chilled or at room temperature. It always brings back childhood memories eating sadya meals on banana leaves. If you're nervous okra will go slimy, you can substitute it with cucumber, beetroot, pineapple, pumpkin or any vegetable you fancy. Such a versatile recipe.
 
 ## Ingredients
 

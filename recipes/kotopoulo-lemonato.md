@@ -8,7 +8,7 @@ source: https://www.instagram.com/p/C3CN8uBS2uN/
 video: https://www.instagram.com/p/C3CN8uBS2uN/
 ---
 
-The Greek classic: whole chicken jointed and roasted on a bed of potatoes in a flood of lemon juice, garlic, olive oil and oregano. 20 minutes of prep, then the oven does the rest. Best eaten with crusty bread to mop up the juices and a sharp Greek salad on the side.
+Greek baked lemon chicken with potatoes. Those lemony juices are best soaked up with bread also saturated with juices from a Greek salad. A great weekday meal the whole family will enjoy — only 20 minutes to prep, leaving your oven to do all the work. No Greek kitchen makes a roast without lemon; the secret is in the marinade. Kali orexi!
 
 ## Ingredients
 

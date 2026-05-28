@@ -8,7 +8,7 @@ source: https://www.instagram.com/p/C1zdaQcLeQI/
 video: https://www.instagram.com/p/C1zdaQcLeQI/
 ---
 
-Spice-rubbed broiled salmon flaked into warm tortillas, with cool avocado crema, pickled red onions and shredded cabbage. Big flavour, weeknight effort.
+Salmon tacos with avocado crema, pickled red onions and slaw. Packed with feel-good ingredients and bold flavours — these fully-loaded fish tacos are a house favourite.
 
 ## Ingredients
 
@@ -28,8 +28,6 @@ Spice-rubbed broiled salmon flaked into warm tortillas, with cool avocado crema,
 - 2 tbsp lime or lemon juice
 - ¼ tsp sea salt
 
-### Salmon & assembly
-
 - 450g (1 lb) centre-cut salmon, skin on
 - 1 tbsp extra virgin olive oil
 - 1 tbsp brown sugar
@@ -44,11 +42,11 @@ Spice-rubbed broiled salmon flaked into warm tortillas, with cool avocado crema,
 
 ## Method
 
-1. **Pickle the onions.** Put the sliced onion in a heat-proof bowl. Bring the vinegar, water, sweetener and salt to a boil, then pour over the onion. Let sit at room temp for at least 30 minutes (up to 2 hours). Drain before serving.
-2. **Make the crema.** Mash the avocado in a bowl until mostly smooth, then stir in the sour cream, jalapeño, citrus juice and salt.
-3. **Prep the salmon.** Heat the broiler/grill to high with a rack about 15cm from the element. Pat the salmon dry and lay it skin-side down on a foil-lined tray. Rub with the olive oil. Mix the brown sugar, smoked paprika, garlic powder, salt and pepper and rub over the flesh.
-4. **Broil** for 8–10 minutes until the salmon flakes easily. Pull the skin off and flake the flesh with a fork.
-5. **Assemble.** Spread 1–2 tbsp of crema on each warm tortilla. Top with flaked salmon, cabbage (a squeeze of lime and pinch of salt over it helps), coriander and pickled onions. Serve with lime wedges.
+1. Put the sliced onion in a heat-proof bowl. Bring the vinegar, water, sweetener and salt to a boil, then pour over the onion. Let sit at room temp for at least 30 minutes (up to 2 hours). Drain before serving.
+2. Mash the avocado in a bowl until mostly smooth, then stir in the sour cream, jalapeño, citrus juice and salt.
+3. Heat the broiler/grill to high with a rack about 15cm from the element. Pat the salmon dry and lay it skin-side down on a foil-lined tray. Rub with the olive oil. Mix the brown sugar, smoked paprika, garlic powder, salt and pepper and rub over the flesh.
+4. Broil for 8–10 minutes until the salmon flakes easily. Pull the skin off and flake the flesh with a fork.
+5. Spread 1–2 tbsp of crema on each warm tortilla. Top with flaked salmon, cabbage (a squeeze of lime and pinch of salt over it helps), coriander and pickled onions. Serve with lime wedges.
 
 ## My notes
 

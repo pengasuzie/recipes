@@ -8,8 +8,6 @@ source: https://www.instagram.com/p/C5lOcRBIivp/
 video: https://www.instagram.com/p/C5lOcRBIivp/
 ---
 
-Halved onions roasted in a muffin tin until soft and sweet, then crowned with goat cheese and a drizzle of honey. Brilliant alongside roasts or as a starter on toast.
-
 ## Ingredients
 
 - 2–3 medium onions, halved across the equator
@@ -32,4 +30,3 @@ Halved onions roasted in a muffin tin until soft and sweet, then crowned with go
 
 ## My notes
 
-From Udi Barkan. Pick onions that fit snugly in the muffin cups — they steam in their own juices and turn jammy. Equally good as a side or piled onto toasted sourdough.

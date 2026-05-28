@@ -8,8 +8,6 @@ source: https://www.instagram.com/p/C6GQRP6vYBm/
 video: https://www.instagram.com/p/C6GQRP6vYBm/
 ---
 
-A whole piece of firm white fish baked in a soy, ginger and honey marinade, with bok choy and snow peas going in the same tray. Cleanup is a single dish.
-
 ## Ingredients
 
 - 750g–1kg piece of firm white fish (rockling, snapper or ling)

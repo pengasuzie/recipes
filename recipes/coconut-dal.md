@@ -8,7 +8,7 @@ source: https://www.instagram.com/p/C5gak_LMqSB/
 video: https://www.instagram.com/p/C5gak_LMqSB/
 ---
 
-A warm, gently spiced red lentil dal finished with coconut milk and fresh tomatoes. One pan, mostly hands-off.
+I lived in India for a year and pretty much ate dal every single day. It's now a staple in my kitchen and I hope you enjoy this recipe as much as I do.
 
 ## Ingredients
 
@@ -28,13 +28,13 @@ A warm, gently spiced red lentil dal finished with coconut milk and fresh tomato
 
 ## Method
 
-1. Dice the onion, garlic and ginger and fry on a low heat for about 5 minutes until soft.
-2. In a separate dry pan, toast the mustard, cumin and coriander seeds for 2 minutes until fragrant.
-3. Tip the toasted seeds into the onion pan and stir through the turmeric, garam masala and chilli powder.
-4. Rinse the lentils and add them. Stir to coat and let the spices infuse on a medium heat for 3 minutes.
-5. Halve the cherry tomatoes and add them, then pour in enough boiling water to just cover everything.
-6. Add the coconut milk, stir, and simmer for about 25 minutes, topping up with water if it starts to dry out.
-7. Top with fresh coriander and serve.
+1. Dice the onion, garlic and ginger and fry on a low heat for 5 minutes.
+2. Separately, fry your seeds for 2 minutes.
+3. Mix the toasted seeds into the onion pan together with the dry spices.
+4. Wash and add your lentils. Mix together and infuse on a medium heat for 3 minutes.
+5. Chop and add your fresh tomatoes, then add enough boiling water to cover.
+6. Add the tin of coconut milk and leave to simmer for about 25 minutes, adding a little more water if it starts to dry out.
+7. Top with fresh coriander.
 
 ## My notes
 

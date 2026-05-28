@@ -8,7 +8,7 @@ source: https://www.instagram.com/p/C6jCoHissij/
 video: https://www.instagram.com/p/C6jCoHissij/
 ---
 
-Jamie's shortcut falafel — tinned chickpeas blitzed with harissa, allspice and coriander, then pan-fried into crisp patties. Stuffed into warm pittas with whatever toppings are around. On the table in fifteen minutes.
+Say hello to my speedy take on falafel! Traditionally it's made from ground chickpeas or fava beans with herbs and spices — here I've taken a shortcut using tinned pulses which most of you'll find knocking around your kitchen cupboards! I've also given you a whole load of topping ideas so you can make it your own.
 
 ## Ingredients
 

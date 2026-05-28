@@ -8,7 +8,7 @@ source: https://www.instagram.com/p/C2WvdNmP4Ji/
 video: https://www.instagram.com/p/C2WvdNmP4Ji/
 ---
 
-The classic Cantonese way to treat a good piece of white fish: a quick steam, a soy-sugar sauce poured over, then julienned ginger and spring onion on top finished with a hit of sizzling hot oil. Barely 15 minutes and the fish stays silky.
+Cantonese steamed fish is one of my favourite ways to enjoy fresh fish. It's easy to prepare and so tasty.
 
 ## Ingredients
 
@@ -23,9 +23,8 @@ The classic Cantonese way to treat a good piece of white fish: a quick steam, a 
 
 ## Method
 
-1. Place the fish fillets on a heatproof dish and into a steamer on high. Cook for 8–10 minutes, until just cooked through.
+1. Place the fish fillets onto a heatproof dish then into a steamer on high. Cook for 8–10 minutes, or until just cooked through.
 2. Mix the light soy sauce, salt, sugar and hot water together and pour over the fish.
-3. Top with the julienned ginger and spring onion.
-4. Heat the neutral oil in a small pan until smoking, then pour over the fish to sizzle the aromatics.
+3. Top with the julienned ginger and spring onion, and pour over hot oil to sizzle.
 
 ## My notes

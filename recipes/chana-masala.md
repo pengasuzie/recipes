@@ -8,7 +8,7 @@ source: https://www.instagram.com/p/C6HSwhBOYnw/
 video: https://www.instagram.com/p/C6HSwhBOYnw/
 ---
 
-A weeknight chickpea curry — bold, warming, and almost entirely from the pantry. Stores well in the fridge, so it doubles as next-day lunch.
+If you're looking for a plant-based meal to add to your weekly rotation, chana masala is a classic that just about anyone can enjoy. It also stores incredibly well in the fridge, making it perfect for a quick lunch throughout the week.
 
 ## Ingredients
 
@@ -29,13 +29,10 @@ A weeknight chickpea curry — bold, warming, and almost entirely from the pantr
 - Salt and pepper
 - 1 can chickpeas, drained
 - 1 cup water
-
-### To finish
-
 - Splash of cream (optional)
-- Coriander leaves
-- Lemon juice
-- Sliced red onion
+- Coriander leaves, to finish
+- Lemon juice, to finish
+- Sliced red onion, to finish
 
 ## Method
 

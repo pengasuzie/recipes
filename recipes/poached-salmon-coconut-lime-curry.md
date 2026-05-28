@@ -8,7 +8,7 @@ source: https://www.instagram.com/p/Cw0kiHrprm2/
 video: https://www.instagram.com/p/Cw0kiHrprm2/
 ---
 
-Salmon poached gently in a fragrant panang-style coconut sauce so it picks up all the flavour. 30 minutes, one pan, and the leftover sauce is brilliant over rice.
+Curries are almost always the easiest ways to make delicious meals with the least amount of effort. Thai people have honestly got their curry paste recipes down to a T, so adding them in adds so much flavour, and can really elevate your dinners. This poached salmon in a coconut lime panang curry sauce is so delicious because you're basically poaching the salmon in that really flavourful sauce — which allows it to become totally infused with flavour. It's super easy, takes 30 minutes, and is incredibly delicious.
 
 ## Ingredients
 

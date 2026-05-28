@@ -8,7 +8,7 @@ source: https://www.instagram.com/p/Cx3KzGqIFrf/
 video: https://www.instagram.com/p/Cx3KzGqIFrf/
 ---
 
-Cosy autumn meatballs — pork and beef rolled small, browned, then finished in a Dijon-cream gravy. Makes about 40, so freeze half for later. Serve with creamy mash, lingonberry sauce and green veg.
+Utterly delicious. Cosy cooking is in full swing with these seriously tempting Swedish meatballs. Makes approx 40 balls (I stuck the ones not on camera in the freezer for later). Serve with creamy mash, lingonberry sauce and seasonal green veg.
 
 ## Ingredients
 

@@ -8,7 +8,7 @@ source: https://www.instagram.com/p/C3lKwB3tHwz/
 video: https://www.instagram.com/p/C3lKwB3tHwz/
 ---
 
-A Keralan coconut prawn curry from Karan Gokani — barely any work for a lot of flavour. Swap the prawns for pumpkin, chicken or fish and the method holds. Serve with rice, hoppers or string hoppers.
+This dead easy Keralan prawn curry is packed with flavour and ready in minutes — you'll find yourself making it again and again. It's such a versatile dish for a quick weeknight meal or a weekend feast, and works equally well with pumpkin, chicken or fish if you want to switch it up.
 
 ## Ingredients
 

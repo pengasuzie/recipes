@@ -8,7 +8,7 @@ source: https://www.instagram.com/p/C0JdsLRor-Q/
 video: https://www.instagram.com/p/C0JdsLRor-Q/
 ---
 
-Tirmagno's midnight spaghetti — pantry pasta built on tinned mackerel, garlic and lemon zest. Three real ingredients beyond the spaghetti, twenty minutes, and the kind of dish you can cobble together at 11 pm and still feel pleased with yourself.
+Spaghettata di mezzanotte? Provate questa.
 
 ## Ingredients
 

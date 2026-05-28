@@ -8,7 +8,7 @@ source: https://www.instagram.com/p/C4EF1YpIQrl/
 video: https://www.instagram.com/p/C4EF1YpIQrl/
 ---
 
-A cooling South Indian staple — yoghurt-loosened rice with a quick tempering of mustard seeds, curry leaves and chillies poured over the top. Traditionally short-grain, but basmati works fine. Best served cold with lime pickle.
+Another of my favourite South Indian rice recipes. It's even easier than the lemon rice, and ready in 5 minutes using leftover rice. I've used basmati because I had some kicking about, but traditionally you'd do this with a short-grain white rice.
 
 ## Ingredients
 
@@ -25,10 +25,9 @@ A cooling South Indian staple — yoghurt-loosened rice with a quick tempering o
 
 ## Method
 
-1. Stir the rice, yoghurt and milk together in a bowl and season with salt. Loosen with extra milk if it feels stiff.
-2. Heat the oil in a small pan over medium. Drop in the mustard seeds and wait for them to crackle.
-3. Add the urid dal, green chillies, curry leaves and dried red chillies. Cook on low for 2 minutes until the dal turns golden.
-4. Pour the hot tempering over the rice. Serve cold with South Indian lime pickle.
+1. Mix the rice, milk and yoghurt and season to taste.
+2. Fry the mustard seeds. Once they crackle, add the remaining ingredients and cook for about 2 minutes on a low heat, then pour over the rice.
+3. I love eating this dish cold with a dollop of South Indian lime pickle.
 
 ## My notes
 

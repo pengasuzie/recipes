@@ -8,7 +8,7 @@ source: https://www.instagram.com/p/C2aYVdlt5n0/
 video: https://www.instagram.com/p/C2aYVdlt5n0/
 ---
 
-Charred sourdough rubbed with garlic, a pile of grated ripe tomato, tinned sardines and a sharp green salsa verde over the top. Julius Roberts uses grilled fresh sardines in his book — this is the tinned-fish weeknight version.
+Another favourite from 2023! This is a dish I can't wait to make again when the good tomatoes come back into season. Pan con Tomate with sardines and salsa verde. Recipe in my book with grilled fresh sardines, but you can use tinned as here, or mackerel fillets.
 
 ## Ingredients
 
