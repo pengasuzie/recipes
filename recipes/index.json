@@ -1,5 +1,22 @@
 [
   {
+    "slug": "spinach-basil-pesto-pasta",
+    "title": "Spinach & Basil Pesto Pasta with Ricotta",
+    "image": "images/spinach-basil-pesto-pasta.jpg",
+    "tags": [
+      "mains",
+      "veggie",
+      "pasta",
+      "quick"
+    ],
+    "time": 20,
+    "servings": 4,
+    "source": "https://github.com/pengasuzie/recipes",
+    "video": null,
+    "book": null,
+    "updated": 1793659537042.7446
+  },
+  {
     "slug": "spinach-feta-gozleme",
     "title": "Spinach & Feta Gozleme",
     "image": "images/spinach-feta-gozleme.jpg",
@@ -15,7 +32,7 @@
     "source": "https://hettymckinnon.com/recipe/spinach-and-feta-gozleme",
     "video": null,
     "book": null,
-    "updated": 1793658198231.5215
+    "updated": 1793658236000
   },
   {
     "slug": "prego-roll",
