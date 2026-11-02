@@ -1,5 +1,38 @@
 [
   {
+    "slug": "spiced-turmeric-chicken-golden-potatoes",
+    "title": "Spiced Turmeric Chicken with Golden Potatoes",
+    "image": "images/spiced-turmeric-chicken-golden-potatoes.jpg",
+    "tags": [
+      "mains",
+      "meat",
+      "slow"
+    ],
+    "time": 85,
+    "servings": 4,
+    "source": "https://www.theguardian.com/food/2022/jun/20/thomasina-miers-recipe-spiced-turmeric-chicken-bake-golden-potatoes",
+    "video": null,
+    "book": null,
+    "updated": 1793659745646.2031
+  },
+  {
+    "slug": "tonys-guanciale-carbonara",
+    "title": "Tony's Guanciale Carbonara",
+    "image": "images/tonys-guanciale-carbonara.jpg",
+    "tags": [
+      "mains",
+      "pasta",
+      "meat",
+      "quick"
+    ],
+    "time": 25,
+    "servings": 1,
+    "source": "https://github.com/pengasuzie/recipes",
+    "video": null,
+    "book": null,
+    "updated": 1793659726554.831
+  },
+  {
     "slug": "spinach-basil-pesto-pasta",
     "title": "Spinach & Basil Pesto Pasta with Ricotta",
     "image": "images/spinach-basil-pesto-pasta.jpg",
@@ -14,7 +47,7 @@
     "source": "https://github.com/pengasuzie/recipes",
     "video": null,
     "book": null,
-    "updated": 1793659537042.7446
+    "updated": 1793659565000
   },
   {
     "slug": "spinach-feta-gozleme",
