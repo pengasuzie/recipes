@@ -63,7 +63,157 @@ const els = {
   title: $("#app-title"),
   back: $("#back-btn"),
   cook: $("#cook-btn"),
+  add: $("#add-btn"),
+  addPanel: $("#add-panel"),
 };
+
+const SB = { url: "https://fmqsttxwgstzhjwfnxnk.supabase.co", key: "sb_publishable_SR0gJiUU3BbRHPUUrG0E8w_HCSRRyzh" };
+const REQUEST_SESSION = "recipes:session";
+const requestState = { busy: false, email: "", refreshing: null };
+
+function savedSession() {
+  try { return JSON.parse(localStorage.getItem(REQUEST_SESSION) || "null"); } catch (_) { return null; }
+}
+
+function saveSession(data) {
+  const session = {
+    access: data.access_token,
+    refresh: data.refresh_token,
+    exp: data.expires_at || Date.now() / 1000 + data.expires_in,
+    email: data.user && data.user.email,
+  };
+  localStorage.setItem(REQUEST_SESSION, JSON.stringify(session));
+  return session;
+}
+
+async function authenticate(body, grant) {
+  const response = await fetch(`${SB.url}/auth/v1/token?grant_type=${grant}`, {
+    method: "POST",
+    headers: { apikey: SB.key, "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw Object.assign(new Error(data.error_description || data.message || `error ${response.status}`), { status: response.status });
+  return saveSession(data);
+}
+
+async function accessToken() {
+  let session = savedSession();
+  if (!session) throw new Error("signed out");
+  if (Date.now() / 1000 > session.exp - 60) {
+    if (!requestState.refreshing) requestState.refreshing = authenticate({ refresh_token: session.refresh }, "refresh_token").finally(() => { requestState.refreshing = null; });
+    try { session = await requestState.refreshing; }
+    catch (error) { if (error.status >= 400 && error.status < 500) localStorage.removeItem(REQUEST_SESSION); throw error; }
+  }
+  return session.access;
+}
+
+async function requestRest(route, options = {}) {
+  const response = await fetch(`${SB.url}/rest/v1/${route}`, {
+    ...options,
+    headers: {
+      apikey: SB.key,
+      Authorization: "Bearer " + await accessToken(),
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
+  const text = await response.text();
+  if (!response.ok) throw Object.assign(new Error(`error ${response.status}`), { status: response.status, body: text });
+  return text ? JSON.parse(text) : null;
+}
+
+function requestError(message = "") {
+  const element = $("#request-error");
+  element.textContent = message;
+  element.hidden = !message;
+}
+
+function requestLabel(url) {
+  try {
+    const parsed = new URL(url);
+    const label = parsed.hostname.replace(/^www\./, "") + parsed.pathname.replace(/\/$/, "");
+    return label.length > 62 ? label.slice(0, 59) + "…" : label;
+  } catch (_) { return url; }
+}
+
+function drawRequestAccount() {
+  const session = savedSession();
+  $("#sign-in-form").hidden = !!session;
+  $("#request-area").hidden = !session;
+  $("#request-email").textContent = session && session.email || "";
+  if (!session) $("#request-history").replaceChildren();
+  return session;
+}
+
+async function refreshRequests() {
+  const session = drawRequestAccount();
+  if (!session || requestState.busy) return;
+  requestState.busy = true;
+  try {
+    const requests = await requestRest("recipe_requests?select=id,url,state,slug,result_note,created_at&order=created_at.desc&limit=50");
+    const states = { waiting: "Waiting", working: "Being worked on", ready: "Ready", failed: "Couldn't be done" };
+    $("#request-history").innerHTML = requests.map(request => {
+      const label = escapeHtml(requestLabel(request.url));
+      const title = request.state === "ready"
+        ? `<a href="#/recipe/${encodeURIComponent(request.slug)}">${label} · Ready</a>`
+        : `<b>${label}</b><p>${states[request.state] || escapeHtml(request.state)}</p>`;
+      return `<div class="request-row">${title}${request.result_note ? `<p>${escapeHtml(request.result_note)}</p>` : ""}</div>`;
+    }).join("") || '<p class="request-row">No requests yet.</p>';
+    requestError("");
+  } catch (error) {
+    drawRequestAccount();
+    requestError(error.status === 404 ? "Recipe requests are not enabled yet." : "Couldn't load requests. Try again.");
+  } finally { requestState.busy = false; }
+}
+
+function initRequests() {
+  els.add.addEventListener("click", () => {
+    els.addPanel.hidden = !els.addPanel.hidden;
+    els.add.setAttribute("aria-expanded", String(!els.addPanel.hidden));
+    drawRequestAccount();
+    if (!els.addPanel.hidden) refreshRequests();
+  });
+  $("#sign-in-form").addEventListener("submit", async event => {
+    event.preventDefault();
+    const button = event.target.querySelector("button");
+    button.disabled = true;
+    requestError("Signing in…");
+    try {
+      await authenticate({ email: $("#sign-in-email").value.trim(), password: $("#sign-in-password").value }, "password");
+      event.target.reset();
+      drawRequestAccount();
+      await refreshRequests();
+    } catch (error) {
+      requestError(error.status === 400 ? "That email and password don't match." : "Couldn't sign in. Try again.");
+    } finally { button.disabled = false; }
+  });
+  $("#recipe-request-form").addEventListener("submit", async event => {
+    event.preventDefault();
+    const button = event.target.querySelector("button");
+    button.disabled = true;
+    try {
+      await requestRest("recipe_requests", {
+        method: "POST",
+        body: JSON.stringify({ url: $("#request-url").value.trim(), note: $("#request-note").value.trim() || null }),
+      });
+      event.target.reset();
+      await refreshRequests();
+    } catch (error) {
+      requestError(/duplicate/i.test(error.body || "") ? "That URL is already waiting." : "Couldn't add the recipe. Try again.");
+    } finally { button.disabled = false; }
+  });
+  $("#sign-out-btn").addEventListener("click", async () => {
+    const session = savedSession();
+    localStorage.removeItem(REQUEST_SESSION);
+    drawRequestAccount();
+    requestError("");
+    if (session) fetch(`${SB.url}/auth/v1/logout?scope=local`, { method: "POST", headers: { apikey: SB.key, Authorization: "Bearer " + session.access } }).catch(() => {});
+  });
+  drawRequestAccount();
+  setInterval(() => { if (!document.hidden && savedSession()) refreshRequests(); }, 60000);
+  document.addEventListener("visibilitychange", () => { if (!document.hidden && savedSession()) refreshRequests(); });
+}
 
 async function loadIndex() {
   const res = await fetch("recipes/index.json", { cache: "no-cache" });
@@ -163,6 +313,7 @@ function showList() {
   els.detail.hidden = true;
   els.back.classList.add("invisible");
   els.cook.classList.add("invisible");
+  els.add.classList.remove("invisible");
   els.title.textContent = "Recipes";
   document.body.classList.remove("cook-mode");
   document.body.scrollTop = 0;
@@ -174,6 +325,9 @@ function showDetail(slug) {
   els.detail.hidden = false;
   els.back.classList.remove("invisible");
   els.cook.classList.remove("invisible");
+  els.add.classList.add("invisible");
+  els.addPanel.hidden = true;
+  els.add.setAttribute("aria-expanded", "false");
   const recipe = recipes.find(r => r.slug === slug);
   els.title.textContent = recipe ? recipe.title : "Recipe";
   document.body.scrollTop = 0;
@@ -202,6 +356,7 @@ function route() {
 }
 
 async function init() {
+  initRequests();
   els.search.addEventListener("input", e => { query = e.target.value; renderList(); });
   els.back.addEventListener("click", () => { history.back(); });
   els.cook.addEventListener("click", toggleCookMode);

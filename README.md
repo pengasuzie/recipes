@@ -32,6 +32,24 @@ Personal recipe book. Static PWA — installs to iPhone home screen like an app,
 
 3. Commit and push. GitHub Actions rebuilds the index and redeploys.
 
+## Add from a URL
+
+Tap **+** in the app, sign in with the same Supabase account used by Thongs, then paste a website, Instagram or YouTube URL. The request shows one of four states: Waiting, Being worked on, Ready or Couldn't be done. A ready request links directly to the new recipe.
+
+The queue is defined in `supabase/migrations/20261103000100_recipe_requests.sql`. The worker commands are:
+
+```bash
+node tools/recipe-requests.js list
+node tools/recipe-requests.js claim <uuid> requests-work/<uuid>
+node tools/extract-recipe.js <url> requests-work/<uuid> # writes source.json, media candidates and draft.md
+node tools/validate-recipe.js recipes/<slug>.md
+node tools/recipe-requests.js ready requests-work/<uuid>/request.json <slug>
+```
+
+`SUPABASE_SECRET_KEY` is required by the queue worker and must stay outside the repository. When Instagram or YouTube requires a login, set `YT_DLP_COOKIES_BROWSER` to the browser name understood by `yt-dlp` (for example `safari` or `chrome`). Never commit exported cookies.
+
+The database trigger can immediately invoke a Codex automation once `recipe_automation_token` and `recipe_automation_id` are added to Supabase Vault. Without those secrets, submitted requests remain safely queued for a manual or scheduled worker.
+
 Filename = URL slug. Lowercase, dash-separated.
 
 ## First-time setup
@@ -46,6 +64,12 @@ node build.js
 # 3. Test locally
 python3 -m http.server 8000
 # open http://localhost:8000
+```
+
+Run the import checks with:
+
+```bash
+node tools/test-recipe-pipeline.js
 ```
 
 ### Deploy to GitHub Pages

@@ -20,13 +20,36 @@
       <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
     <h1 id="app-title">Recipes</h1>
-    <button id="cook-btn" class="icon-btn invisible" aria-label="Cook mode">
-      <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M6 2v6m0-6h12v6M4 8h16l-1 13H5L4 8z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
+    <div class="header-actions">
+      <button id="add-btn" class="icon-btn" aria-label="Add recipe" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      </button>
+      <button id="cook-btn" class="icon-btn invisible" aria-label="Cook mode">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M6 2v6m0-6h12v6M4 8h16l-1 13H5L4 8z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
   </header>
 
   <main id="app-main">
     <section id="list-view">
+      <section id="add-panel" hidden>
+        <form id="sign-in-form">
+          <h2>Add a recipe</h2>
+          <input id="sign-in-email" type="email" autocomplete="username" placeholder="Email" required>
+          <input id="sign-in-password" type="password" autocomplete="current-password" placeholder="Password" required>
+          <button type="submit">Sign in</button>
+        </form>
+        <div id="request-area" hidden>
+          <div class="request-account"><span id="request-email"></span><button id="sign-out-btn" type="button">Sign out</button></div>
+          <form id="recipe-request-form">
+            <input id="request-url" type="url" inputmode="url" autocomplete="url" placeholder="Paste recipe, Instagram or YouTube URL" maxlength="2000" required>
+            <textarea id="request-note" placeholder="Note (optional)" maxlength="2000" rows="2"></textarea>
+            <button type="submit">Add recipe</button>
+          </form>
+          <div id="request-history"></div>
+        </div>
+        <p id="request-error" role="status" hidden></p>
+      </section>
       <div class="search-bar">
         <input id="search" type="search" placeholder="Search recipes" autocomplete="off" autocorrect="off" autocapitalize="off">
       </div>
