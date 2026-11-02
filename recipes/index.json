@@ -1,5 +1,20 @@
 [
   {
+    "slug": "spinach-feta-gozleme",
+    "title": "Spinach & Feta Gozleme",
+    "image": "images/spinach-feta-gozleme.jpg",
+    "tags": [
+      "mains",
+      "veggie"
+    ],
+    "time": 60,
+    "servings": 4,
+    "source": "https://hettymckinnon.com/recipe/spinach-and-feta-gozleme",
+    "video": null,
+    "book": null,
+    "updated": 1793658055226
+  },
+  {
     "slug": "prego-roll",
     "title": "South African Prego Roll",
     "image": "images/prego-roll.jpg",
@@ -12,7 +27,7 @@
     "source": "https://www.instagram.com/reels/DYeWwChCiN9/",
     "video": "https://www.instagram.com/reels/DYeWwChCiN9/",
     "book": null,
-    "updated": 1779942226394.0479
+    "updated": 1779942241000
   },
   {
     "slug": "penne-ricotta-avocado-sausage",
