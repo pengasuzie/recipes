@@ -7,9 +7,9 @@ ROOT = Path(__file__).parent
 ICONS = ROOT / "icons"
 ICONS.mkdir(exist_ok=True)
 
-ACCENT = (196, 80, 42)        # #c4502a
-CREAM = (246, 240, 230)       # #f6f0e6
-INK = (31, 26, 22)            # #1f1a16
+ACCENT = (233, 79, 135)       # #e94f87
+CREAM = (255, 255, 255)       # #ffffff
+INK = (25, 41, 78)            # #19294e
 
 def make_icon(size: int, maskable: bool = False) -> Image.Image:
     img = Image.new("RGB", (size, size), ACCENT)
