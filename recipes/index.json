@@ -1,5 +1,21 @@
 [
   {
+    "slug": "tonys-maputo-piri-piri-chicken",
+    "title": "Tony's Maputo Piri Piri Chicken",
+    "image": "images/tonys-maputo-piri-piri-chicken.jpg",
+    "tags": [
+      "mains",
+      "meat",
+      "slow"
+    ],
+    "time": 300,
+    "servings": 4,
+    "source": "https://github.com/pengasuzie/recipes",
+    "video": null,
+    "book": null,
+    "updated": 1793661407267.6108
+  },
+  {
     "slug": "tonys-guanciale-carbonara",
     "title": "Tony's Guanciale Carbonara",
     "image": "images/tonys-guanciale-carbonara.jpg",
@@ -14,7 +30,7 @@
     "source": "https://github.com/pengasuzie/recipes",
     "video": null,
     "book": null,
-    "updated": 1793661089777.0784
+    "updated": 1793661140000
   },
   {
     "slug": "prawn-lasagne-habanero-oil",
@@ -31,22 +47,6 @@
     "source": "https://www.penguin.com.au/recipes/3902-prawn-lasagne-with-habanero-oil",
     "video": null,
     "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)",
-    "updated": 1793660759000
-  },
-  {
-    "slug": "tonys-maputo-piri-piri-chicken",
-    "title": "Tony's Maputo Piri Piri Chicken",
-    "image": "images/tonys-maputo-piri-piri-chicken.jpg",
-    "tags": [
-      "mains",
-      "meat",
-      "slow"
-    ],
-    "time": 300,
-    "servings": 4,
-    "source": "https://github.com/pengasuzie/recipes",
-    "video": null,
-    "book": null,
     "updated": 1793660759000
   },
   {
