@@ -3,6 +3,9 @@
     "slug": "spinach-feta-gozleme",
     "title": "Spinach & Feta Gozleme",
     "image": "images/spinach-feta-gozleme.jpg",
+    "photos": [
+      "images/spinach-feta-gozleme-2.jpg"
+    ],
     "tags": [
       "mains",
       "veggie"
@@ -12,7 +15,7 @@
     "source": "https://hettymckinnon.com/recipe/spinach-and-feta-gozleme",
     "video": null,
     "book": null,
-    "updated": 1793658055226
+    "updated": 1793658198231.5215
   },
   {
     "slug": "prego-roll",

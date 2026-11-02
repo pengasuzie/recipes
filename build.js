@@ -130,17 +130,26 @@ const entries = files.map(f => {
     const abs = isAbsolute(fm.image) ? fm.image : join(root, fm.image);
     if (existsSync(abs)) { image = fm.image; imageEdit = lastEditTime(abs); }
   }
+  const photos = (Array.isArray(fm.photos) ? fm.photos : []).filter(photo => {
+    const abs = isAbsolute(photo) ? photo : join(root, photo);
+    return existsSync(abs);
+  });
+  const photosEdit = photos.reduce((latest, photo) => {
+    const abs = isAbsolute(photo) ? photo : join(root, photo);
+    return Math.max(latest, lastEditTime(abs));
+  }, 0);
   return {
     slug,
     title: fm.title || slug,
     image,
+    ...(photos.length ? { photos } : {}),
     tags: fm.tags || [],
     time: fm.time || null,
     servings: fm.servings || null,
     source: fm.source || null,
     video: fm.video || null,
     book: fm.book || null,
-    updated: Math.max(lastEditTime(mdAbs), imageEdit),
+    updated: Math.max(lastEditTime(mdAbs), imageEdit, photosEdit),
   };
 });
 

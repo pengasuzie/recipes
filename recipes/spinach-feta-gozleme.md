@@ -1,6 +1,7 @@
 ---
 title: Spinach & Feta Gozleme
 image: images/spinach-feta-gozleme.jpg
+photos: [images/spinach-feta-gozleme-2.jpg]
 tags: [mains, veggie]
 time: 60
 servings: 4

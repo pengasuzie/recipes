@@ -133,6 +133,11 @@ async function renderDetail(slug) {
   const sourceBtn = recipe.source && recipe.source !== recipe.video
     ? `<a class="open-source" href="${recipe.source}" target="_blank" rel="noopener">Open original ↗</a>`
     : "";
+  const gallery = (recipe.photos || []).length
+    ? `<div class="recipe-gallery">${recipe.photos.map((photo, i) =>
+        `<img src="${escapeHtml(photo)}" alt="${escapeHtml(recipe.title)} — photo ${i + 2}" loading="lazy">`
+      ).join("")}</div>`
+    : "";
   const credit = recipe.book ? `<p class="book-credit">${escapeHtml(recipe.book)}</p>` : "";
   els.detail.innerHTML = `
     ${img}
@@ -140,6 +145,7 @@ async function renderDetail(slug) {
     <div class="detail-meta">${tagsHtml}${meta ? `<span>${meta}</span>` : ""}</div>
     ${videoBtn}${sourceBtn}
     <div class="notes">${notes ? renderMarkdown(notes) : "<p><em>No notes yet. Add your own under <code>recipes/" + slug + ".md</code>.</em></p>"}</div>
+    ${gallery}
     ${credit}
   `;
 }

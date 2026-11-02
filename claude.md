@@ -89,7 +89,7 @@ When Bruce pastes an Instagram URL, YouTube URL, website URL, or raw recipe text
 
 3. **Pick tags from the existing vocabulary** in `recipes/index.json`: `mains`, `veggie`, `meat`, `seafood`, `fish`, `pasta`, `rice`, `side`, `brunch`, `sweet`, `quick` (≤30 min), `slow` (>60 min). Add new tags sparingly.
 
-4. **Grab the hero image.** All paths below are pure HTTP — no browser needed.
+4. **Grab the recipe photos.** All paths below are pure HTTP — no browser needed. Save the best dish image as the hero at `images/<slug>.jpg`. Also download every other useful in-article photo of the same dish or its preparation as `images/<slug>-2.jpg`, `images/<slug>-3.jpg`, etc., and list those additional images in frontmatter as `photos: [images/<slug>-2.jpg, ...]`. Exclude logos, icons, decorative graphics, author portraits, ads and cards for unrelated recipes.
    - **Instagram:** reuse the `og:image` URL captured in step 1, then `curl -sL -o images/<slug>.jpg "<url>"`. Preserve the full query string — Instagram CDN URLs expire fast, so download immediately.
    - **YouTube:** default to `https://img.youtube.com/vi/<videoId>/maxresdefault.jpg` (fall back to `hqdefault.jpg` if 404). If Bruce specifies "grab the best frame" or a timestamp, use `yt-dlp -f mp4 -o /tmp/<slug>.mp4 "<url>"` then `ffmpeg -ss <HH:MM:SS> -i /tmp/<slug>.mp4 -frames:v 1 -q:v 2 images/<slug>.jpg`. Default timestamp if unspecified: 75% through the video (usually the plated shot).
    - **Website:** read `meta[property="og:image"]` from the curled HTML. Fall back to the largest in-page `<img>` if absent.

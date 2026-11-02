@@ -233,6 +233,17 @@ body {
 .notes p, .notes li { margin: 6px 0; }
 .notes ul, .notes ol { padding-left: 22px; }
 .notes a { color: var(--accent); }
+.recipe-gallery {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+.recipe-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
 .book-credit {
   margin-top: 18px;
   font-size: 13px;
