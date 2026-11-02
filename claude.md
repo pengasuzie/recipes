@@ -85,7 +85,7 @@ When Bruce pastes an Instagram URL, YouTube URL, website URL, or raw recipe text
    - If the source is an article that embeds or links to a YouTube/Vimeo/etc. video, extract that video URL and set `video:` to it (keep `source:` as the article URL).
    - If the source is text-only with no video, omit `video:`.
 
-   Body structure: short intro paragraph, `## Ingredients` (with `###` sub-headings for sauces/components), `## Method` as a numbered list, then `## My notes` at the bottom for Bruce's tweaks. Reformat the source's instructions in our own structure — don't paste long verbatim blocks.
+   Body structure: short intro paragraph, `## Ingredients` (with `###` sub-headings for sauces/components), `## Method` as a numbered list, then `## My notes` at the bottom for Bruce's tweaks. Preserve the supplied wording, detail and sequence wherever possible. Formatting into the house structure and correcting clear spelling or measurement errors is fine; do not paraphrase, embellish, combine or expand lines without a real reason such as safety, ambiguity or copyright.
 
 3. **Pick tags from the existing vocabulary** in `recipes/index.json`: `mains`, `veggie`, `meat`, `seafood`, `fish`, `pasta`, `rice`, `side`, `brunch`, `sweet`, `quick` (≤30 min), `slow` (>60 min). Add new tags sparingly.
 
@@ -127,7 +127,7 @@ When Bruce pastes/attaches an image — either as a direct attachment or an imag
 4. **Sanity-check formatting** on the existing markdown and fix anything off:
    - Frontmatter has `title`, `image`, `tags`, `time`, `servings`, `source` (and `video:` if applicable).
    - Body order: short intro → `## Ingredients` (with `###` subheadings for components) → `## Method` numbered list → `## My notes`.
-   - Bullet lists for ingredients (not paragraphs), numbered list for method, no verbatim copy-paste blobs from the source.
+   - Bullet lists for ingredients (not paragraphs) and a numbered list for the method. Preserve the original wording and voice; remove only unrelated text, and make only the minimal changes needed for formatting, clarity, safety or copyright.
    - Australian English spelling, metric units, sensible quantity formatting.
 
 5. **Rebuild and commit:** `node build.js`, then commit the markdown, image, and `recipes/index.json` with a message like `Update <recipe title> image` or `Reformat <recipe title> recipe`. Push to `origin/main`.

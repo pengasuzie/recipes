@@ -7,31 +7,25 @@ servings: 1
 source: https://github.com/pengasuzie/recipes
 ---
 
-Tony's traditional carbonara uses whole eggs, plenty of Pecorino Romano and slowly rendered guanciale for a glossy, creamy sauce without cream.
-
 ## Ingredients
 
 ### Per person
 
-- 60g guanciale, or pancetta
-- 100g dried spaghetti
-- ⅓ cup finely grated Pecorino Romano, plus extra to serve
-- 1 whole egg
-- Freshly ground black pepper
-- Pasta cooking water, as needed
+- 60g guanciale (pig cheek) per person. Alternatively use Pancetta
+- 100g dried spaghetti per person
+- ⅓ cup Pecorino Romano cheese per person
+- 1 whole egg per person
 
 ## Method
 
-1. Remove and discard the skin from the guanciale, leaving its fat intact. Cut the guanciale into 10–12mm cubes.
-2. Put the guanciale in a cold frying pan large enough to hold the cooked pasta. Place over low heat and cook gently until the meat is cooked and the fat has rendered, then take the pan off the heat.
-3. Meanwhile, bring a saucepan of water to the boil. Add the spaghetti and cook it for 1 minute less than the packet directions.
-4. Beat the egg in a bowl, then mix in the Pecorino and a generous grinding of black pepper. Do not add salt; the guanciale and Pecorino provide plenty.
-5. Transfer the spaghetti straight from the saucepan into the pan of guanciale and rendered fat. Toss well, then let the pan cool slightly so it will not scramble the egg.
-6. Pour in the egg and cheese mixture and toss vigorously until every strand is coated in a creamy sauce. Loosen with a little pasta water if needed. If the sauce needs help thickening, return the pan to the lowest possible heat very briefly, stirring constantly.
-7. Serve immediately with more Pecorino and plenty of black pepper.
+1. Remove the skin from the guanciale and discard. Cut 60g per person of the guanciale into cubetti, about 10–12mm cubed. Do NOT remove the fat.
+2. Place in a cold pan large enough to later receive the pasta. Cook gently until the meat is done and the fat rendered. Remove from heat.
+3. Meanwhile boil water for the pasta.
+4. Add spaghetti and boil for one minute less than shown on packet (to allow for later cooking that will occur when added to guanciale in the pan).
+5. Add Pecorino to beaten egg and mix together with ground black pepper. Don’t bother to add salt because there will be salt in both the Pecorino and guanciale.
+6. Take spaghetti straight from the saucepan and add it directly to the cooked guanciale in the pan and stir.
+7. Add the egg and cheese sauce to the pasta once the pan has cooled a bit and stir together to coat it in a creamy sauce. Add some pasta water if necessary to loosen the sauce. If necessary, put back on very low heat until the creamy sauce develops. Do NOT overcook or you will get scrambled eggs.
+8. Serve immediately with a good sprinkling of ground black pepper and generous sprinkling of Pecorino.
+9. Eat straightaway.
 
 ## My notes
-
-- Multiply every ingredient by the number of people you are serving.
-- The pan must cool slightly before the egg mixture goes in. Gentle residual heat makes the sauce creamy; high heat makes scrambled eggs.
-- Eat it straight away.
