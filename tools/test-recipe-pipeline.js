@@ -51,6 +51,10 @@ async function test() {
   const fm = frontmatter("---\ntitle: Test\ntags: [mains, veggie]\n---\n");
   assert.equal(fm.title, "Test");
   assert.deepEqual(fm.tags, ["mains", "veggie"]);
+  const migration = fs.readFileSync(path.join(__dirname, "../supabase/migrations/20261103000100_recipe_requests.sql"), "utf8");
+  assert(migration.includes("recipe_routine_fire_url"));
+  assert(migration.includes("experimental-cc-routine-2026-04-01"));
+  assert(!migration.includes("api.openai.com"));
   fs.rmSync(work, { recursive: true, force: true });
   console.log("PASS: website extraction, source routing, recipe queue and frontmatter validation");
 }

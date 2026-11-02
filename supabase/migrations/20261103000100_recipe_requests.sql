@@ -72,38 +72,41 @@ grant execute on function public.claim_recipe_request(uuid),
   public.finish_recipe_request(uuid, uuid, text, text),
   public.retry_recipe_request(uuid) to service_role;
 
--- Optional immediate trigger. Add these two values to Supabase Vault when the Codex automation exists:
---   recipe_automation_token: an OpenAI project API key
---   recipe_automation_id: the automation id (auto_...)
--- The automation should run this repository's "Doing queued recipe requests" workflow.
+-- Same architecture as Thongs: a saved request fires a Claude Code routine immediately, charged against
+-- Bruce's Claude plan rather than an API account. Store the routine trigger URL and its bearer token in
+-- Supabase Vault as recipe_routine_fire_url and recipe_routine_fire_token. Without them, the request remains
+-- queued and the scheduled routine can still pick it up later.
 create extension if not exists pg_net with schema extensions;
 
-create or replace function public.recipe_requests_start_automation()
+create or replace function public.recipe_requests_start_routine()
 returns trigger language plpgsql security definer set search_path = '' as $$
 declare
   tok text;
-  automation_id text;
+  routine_url text;
 begin
   select decrypted_secret into tok from vault.decrypted_secrets
-    where name = 'recipe_automation_token' limit 1;
-  select decrypted_secret into automation_id from vault.decrypted_secrets
-    where name = 'recipe_automation_id' limit 1;
-  if tok is null or automation_id is null then return new; end if;
+    where name = 'recipe_routine_fire_token' limit 1;
+  select decrypted_secret into routine_url from vault.decrypted_secrets
+    where name = 'recipe_routine_fire_url' limit 1;
+  if tok is null or routine_url is null then return new; end if;
   perform net.http_post(
-    url := 'https://api.openai.com/v1/agents/automations/' || automation_id || '/invocations',
+    url := routine_url,
     headers := jsonb_build_object(
       'Authorization', 'Bearer ' || tok,
-      'OpenAI-Beta', 'agents=v1',
+      'anthropic-version', '2026-10-21',
+      'anthropic-beta', 'experimental-cc-routine-2026-04-01',
       'Content-Type', 'application/json'
     ),
-    body := '{}'::jsonb
+    body := jsonb_build_object(
+      'text', 'A recipe request was just made (' || new.id || '). Do the oldest waiting recipe request using the repository workflow.'
+    )
   );
   return new;
 end;
 $$;
 
-revoke all on function public.recipe_requests_start_automation() from public, anon, authenticated;
-drop trigger if exists recipe_requests_start_automation on public.recipe_requests;
-create trigger recipe_requests_start_automation
+revoke all on function public.recipe_requests_start_routine() from public, anon, authenticated;
+drop trigger if exists recipe_requests_start_routine on public.recipe_requests;
+create trigger recipe_requests_start_routine
 after insert on public.recipe_requests for each row
-execute function public.recipe_requests_start_automation();
+execute function public.recipe_requests_start_routine();

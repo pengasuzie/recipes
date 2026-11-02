@@ -48,7 +48,7 @@ node tools/recipe-requests.js ready requests-work/<uuid>/request.json <slug>
 
 `SUPABASE_SECRET_KEY` is required by the queue worker and must stay outside the repository. When Instagram or YouTube requires a login, set `YT_DLP_COOKIES_BROWSER` to the browser name understood by `yt-dlp` (for example `safari` or `chrome`). Never commit exported cookies.
 
-The database trigger can immediately invoke a Codex automation once `recipe_automation_token` and `recipe_automation_id` are added to Supabase Vault. Without those secrets, submitted requests remain safely queued for a manual or scheduled worker.
+The worker is a Claude Code routine, using the same architecture as Thongs and Bruce's Claude plan rather than API billing. Store its trigger URL and bearer token in Supabase Vault as `recipe_routine_fire_url` and `recipe_routine_fire_token`. A new request fires the routine immediately; its regular schedule remains the fallback. Without those Vault values, submitted requests remain safely queued.
 
 Filename = URL slug. Lowercase, dash-separated.
 
