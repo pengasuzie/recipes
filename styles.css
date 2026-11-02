@@ -95,66 +95,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   padding: 20px 16px 48px;
 }
 
-.collection-intro {
-  position: relative;
-  margin: 4px 0 20px;
-  padding: 22px 22px 24px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  border-radius: 26px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(255,255,255,0.68));
-  box-shadow: var(--shadow);
-}
-.collection-intro::before,
-.collection-intro::after {
-  position: absolute;
-  content: "";
-  border-radius: 999px;
-  pointer-events: none;
-}
-.collection-intro::before {
-  top: -42px;
-  right: -30px;
-  width: 128px;
-  height: 128px;
-  background: var(--pink-soft);
-}
-.collection-intro::after {
-  right: 58px;
-  bottom: -48px;
-  width: 96px;
-  height: 96px;
-  background: var(--blue-soft);
-}
-.eyebrow {
-  position: relative;
-  z-index: 1;
-  margin: 0 0 7px;
-  color: var(--pink-deep);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-.collection-intro h2 {
-  position: relative;
-  z-index: 1;
-  max-width: 72%;
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(30px, 7vw, 43px);
-  line-height: 1.02;
-  letter-spacing: -0.045em;
-}
-.collection-intro > p:last-child {
-  position: relative;
-  z-index: 1;
-  max-width: 78%;
-  margin: 10px 0 0;
-  color: var(--ink-soft);
-  font-size: 14px;
-}
-
 #add-panel {
   margin: 0 0 18px;
   padding: 18px;
@@ -451,8 +391,6 @@ body.cook-mode .book-credit { color: #aab7d4; }
 
 @media (min-width: 540px) {
   #app-main { padding: 28px 24px 60px; }
-  .collection-intro { padding: 28px 30px 30px; }
-  .collection-intro h2, .collection-intro > p:last-child { max-width: none; }
   .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
   .card-body { min-height: 96px; padding: 13px 15px 15px; }
   .card-title { font-size: 17px; }
