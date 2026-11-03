@@ -25,7 +25,7 @@ function validate(file) {
   const text = fs.readFileSync(absolute, "utf8");
   const fm = frontmatter(text);
   const errors = [];
-  for (const key of ["title", "image", "tags", "time", "servings", "source"]) {
+  for (const key of ["title", "image", "tags", "time", "servings"]) {
     if (!fm[key] || Array.isArray(fm[key]) && !fm[key].length) errors.push(`missing ${key}`);
   }
   if (fm.source) {

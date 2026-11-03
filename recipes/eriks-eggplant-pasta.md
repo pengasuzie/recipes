@@ -4,7 +4,6 @@ image: images/eriks-eggplant-pasta.jpg
 tags: [mains, pasta, meat, slow]
 time: 100
 servings: 6
-source: https://github.com/pengasuzie/recipes
 ---
 
 ## Ingredients

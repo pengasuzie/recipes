@@ -102,7 +102,15 @@ const els = {
 let detailHeaderCleanup = null;
 
 function setHeaderTitle(text, compact = false) {
-  els.title.textContent = text;
+  if (text === "Recipes") {
+    const link = document.createElement("a");
+    link.className = "app-home-link";
+    link.href = "#/";
+    link.textContent = text;
+    els.title.replaceChildren(link);
+  } else {
+    els.title.textContent = text;
+  }
   els.title.classList.toggle("compact", compact);
 }
 
@@ -365,6 +373,9 @@ async function renderDetail(slug) {
   const sourceBtn = recipe.source && recipe.source !== recipe.video
     ? `<a class="open-source" href="${recipe.source}" target="_blank" rel="noopener">Open original ↗</a>`
     : "";
+  const actionButtons = videoBtn || sourceBtn
+    ? `<div class="recipe-actions">${videoBtn}${sourceBtn}</div>`
+    : "";
   const gallery = (recipe.photos || []).length
     ? `<div class="recipe-gallery">${recipe.photos.map((photo, i) =>
         `<img src="${escapeHtml(photo)}" alt="${escapeHtml(recipe.title)} — photo ${i + 2}" loading="lazy">`
@@ -378,7 +389,7 @@ async function renderDetail(slug) {
       ${favouriteButton(recipe.slug, recipe.title, true)}
     </div>
     <div class="detail-meta">${tagsHtml}${meta ? `<span>${meta}</span>` : ""}</div>
-    ${videoBtn}${sourceBtn}
+    ${actionButtons}
     <div class="notes">${notes ? renderMarkdown(notes) : "<p><em>No notes yet. Add your own under <code>recipes/" + slug + ".md</code>.</em></p>"}</div>
     ${gallery}
     ${credit}
