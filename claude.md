@@ -104,6 +104,7 @@ When Bruce pastes an Instagram URL, YouTube URL, website URL, or raw recipe text
 - `og:image` URLs from Instagram CDN expire; download immediately, don't store the URL.
 - Always include `source:` in frontmatter so the recipe links back to the creator.
 - If the source video shows multiple dishes, ask which one before extracting.
+- Prefer a clean, high-resolution finished-dish image from the original publisher or creator over a video-player screenshot. Search for the official still before using a supplied screenshot when a better source image is likely available.
 
 ---
 
