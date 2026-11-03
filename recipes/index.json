@@ -1,5 +1,29 @@
 [
   {
+    "slug": "thai-chicken-lettuce-wraps-larb-gai",
+    "title": "Thai Lettuce Wraps (Larb Gai, Laab Gai)",
+    "image": "images/thai-chicken-lettuce-wraps-larb-gai.jpg",
+    "photos": [
+      "images/thai-chicken-lettuce-wraps-larb-gai-2.jpg",
+      "images/thai-chicken-lettuce-wraps-larb-gai-3.jpg",
+      "images/thai-chicken-lettuce-wraps-larb-gai-4.jpg",
+      "images/thai-chicken-lettuce-wraps-larb-gai-5.jpg",
+      "images/thai-chicken-lettuce-wraps-larb-gai-6.jpg",
+      "images/thai-chicken-lettuce-wraps-larb-gai-7.jpg"
+    ],
+    "tags": [
+      "mains",
+      "meat",
+      "quick"
+    ],
+    "time": 20,
+    "servings": 3,
+    "source": "https://www.recipetineats.com/thai-chicken-lettuce-cups-larb-gai-laab-gai/",
+    "video": "https://www.youtube.com/watch?v=cRKVK8iwu_8",
+    "book": null,
+    "updated": 1793664902873.4377
+  },
+  {
     "slug": "prawn-lasagne-habanero-oil",
     "title": "Prawn Lasagne with Habanero Oil",
     "image": "images/prawn-lasagne-habanero-oil.jpg",
