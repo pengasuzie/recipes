@@ -1,5 +1,21 @@
 [
   {
+    "slug": "borlotti-beans",
+    "title": "Borlotti Beans",
+    "image": "images/borlotti-beans.jpg",
+    "tags": [
+      "side",
+      "veggie",
+      "slow"
+    ],
+    "time": 120,
+    "servings": 8,
+    "source": "https://www.penguin.com.au/books/5-ingredients-quick-and-easy-food-9780718187729",
+    "video": null,
+    "book": "5 Ingredients – Quick & Easy Food by Jamie Oliver (Michael Joseph, 2017)",
+    "updated": 1793666530087.697
+  },
+  {
     "slug": "festive-hummus-brussels-sprouts-chestnuts",
     "title": "Festive Hummus with Roasted Brussels Sprouts & Chestnuts",
     "image": "images/festive-hummus-brussels-sprouts-chestnuts.jpg",
@@ -12,7 +28,7 @@
     "source": "https://ottolenghi.co.uk/pages/recipes/festive-hummus-roasted-brussels-sprouts-chestnuts",
     "video": null,
     "book": null,
-    "updated": 1793666107496.1636
+    "updated": 1793666142000
   },
   {
     "slug": "giant-cheese-on-toast-honey-urfa-butter",
