@@ -1,5 +1,21 @@
 [
   {
+    "slug": "smoky-chorizo-skillet-eggs",
+    "title": "Smoky Chorizo Skillet Eggs with Basil & Lemon",
+    "image": "images/smoky-chorizo-skillet-eggs.jpg",
+    "tags": [
+      "brunch",
+      "meat",
+      "quick"
+    ],
+    "time": 20,
+    "servings": 2,
+    "source": null,
+    "video": null,
+    "book": null,
+    "updated": 1793688005254.329
+  },
+  {
     "slug": "baghdad-eggs",
     "title": "Baghdad Eggs",
     "image": "images/baghdad-eggs.jpg",
