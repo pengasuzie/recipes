@@ -51,6 +51,38 @@ function renderMarkdown(md) {
 let recipes = [];
 let activeTag = "all";
 let query = "";
+const FAVOURITES_KEY = "recipes:favourites";
+let favourites = new Set();
+try { favourites = new Set(JSON.parse(localStorage.getItem(FAVOURITES_KEY) || "[]")); } catch (_) {}
+
+const heartIcon = solid => `<svg viewBox="0 0 24 24" fill="${solid ? "currentColor" : "none"}" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.6 7.6 3.9 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.3 0 5.6 3.1 4.4 6.6-1.7 4.8-9.2 9.4-9.2 9.4z"/></svg>`;
+const isFavourite = slug => favourites.has(slug);
+
+function favouriteButton(slug, title, detail = false) {
+  const on = isFavourite(slug);
+  const label = `${on ? "Remove" : "Add"} ${title} ${on ? "from" : "to"} favourites`;
+  return `<button class="favourite-btn${detail ? " detail-favourite" : ""}" type="button" data-favourite="${escapeHtml(slug)}" aria-pressed="${on}" aria-label="${escapeHtml(label)}" title="${escapeHtml(label)}">${heartIcon(on)}</button>`;
+}
+
+function toggleFavourite(slug) {
+  isFavourite(slug) ? favourites.delete(slug) : favourites.add(slug);
+  localStorage.setItem(FAVOURITES_KEY, JSON.stringify([...favourites]));
+  renderFilter();
+  renderList();
+  refreshDetailFavourite(slug);
+}
+
+function refreshDetailFavourite(slug) {
+  const button = els.detail.querySelector(`[data-favourite="${CSS.escape(slug)}"]`);
+  const recipe = recipes.find(r => r.slug === slug);
+  if (!button || !recipe) return;
+  const on = isFavourite(slug);
+  const label = `${on ? "Remove" : "Add"} ${recipe.title} ${on ? "from" : "to"} favourites`;
+  button.innerHTML = heartIcon(on);
+  button.setAttribute("aria-pressed", String(on));
+  button.setAttribute("aria-label", label);
+  button.title = label;
+}
 
 const $ = sel => document.querySelector(sel);
 const els = {
@@ -266,8 +298,13 @@ function uniqueTags() {
 }
 
 function renderFilter() {
-  const tags = ["all", ...uniqueTags()];
-  els.filter.innerHTML = tags.map(t => `<button class="tag-chip ${t === activeTag ? "active" : ""}" data-tag="${t}">${t}</button>`).join("");
+  const tags = ["all", "favourites", ...uniqueTags()];
+  els.filter.innerHTML = tags.map(t => {
+    const label = t === "favourites"
+      ? `${heartIcon(activeTag === t)}<span>Favourites${favourites.size ? ` · ${favourites.size}` : ""}</span>`
+      : t;
+    return `<button class="tag-chip ${t === "favourites" ? "favourites-chip " : ""}${t === activeTag ? "active" : ""}" data-tag="${t}" aria-pressed="${t === activeTag}">${label}</button>`;
+  }).join("");
   els.filter.querySelectorAll(".tag-chip").forEach(btn => {
     btn.addEventListener("click", () => {
       activeTag = btn.dataset.tag;
@@ -280,7 +317,8 @@ function renderFilter() {
 function renderList() {
   const q = query.trim().toLowerCase();
   const filtered = recipes.filter(r => {
-    if (activeTag !== "all" && !(r.tags || []).includes(activeTag)) return false;
+    if (activeTag === "favourites" && !isFavourite(r.slug)) return false;
+    if (activeTag !== "all" && activeTag !== "favourites" && !(r.tags || []).includes(activeTag)) return false;
     if (q && !r.title.toLowerCase().includes(q) && !(r.tags || []).some(t => t.includes(q))) return false;
     return true;
   });
@@ -288,15 +326,21 @@ function renderList() {
     const img = r.image ? `style="background-image:url('${r.image}')"` : "";
     const imgClass = r.image ? "card-img" : "card-img no-photo";
     const meta = [r.time ? `${r.time} min` : null, r.servings ? `serves ${r.servings}` : null].filter(Boolean).join(" · ");
-    return `<a class="card" href="#/recipe/${r.slug}">
-      <div class="${imgClass}" ${img}></div>
-      <div class="card-body">
-        <div class="card-title">${escapeHtml(r.title)}</div>
-        <div class="card-meta">${meta}</div>
-      </div>
-    </a>`;
+    return `<div class="card-wrap">
+      <a class="card" href="#/recipe/${r.slug}">
+        <div class="${imgClass}" ${img}></div>
+        <div class="card-body">
+          <div class="card-title">${escapeHtml(r.title)}</div>
+          <div class="card-meta">${meta}</div>
+        </div>
+      </a>
+      ${favouriteButton(r.slug, r.title)}
+    </div>`;
   }).join("");
   els.empty.hidden = filtered.length > 0;
+  els.empty.textContent = activeTag === "favourites"
+    ? "No favourites yet. Tap a heart to add one."
+    : "No recipes match.";
 }
 
 async function renderDetail(slug) {
@@ -329,7 +373,10 @@ async function renderDetail(slug) {
   const credit = recipe.book ? `<p class="book-credit">${escapeHtml(recipe.book)}</p>` : "";
   els.detail.innerHTML = `
     ${img}
-    <h1 class="detail-title">${escapeHtml(recipe.title)}</h1>
+    <div class="detail-heading">
+      <h1 class="detail-title">${escapeHtml(recipe.title)}</h1>
+      ${favouriteButton(recipe.slug, recipe.title, true)}
+    </div>
     <div class="detail-meta">${tagsHtml}${meta ? `<span>${meta}</span>` : ""}</div>
     ${videoBtn}${sourceBtn}
     <div class="notes">${notes ? renderMarkdown(notes) : "<p><em>No notes yet. Add your own under <code>recipes/" + slug + ".md</code>.</em></p>"}</div>
@@ -398,6 +445,14 @@ function route() {
 async function init() {
   initRequests();
   els.search.addEventListener("input", e => { query = e.target.value; renderList(); });
+  els.grid.addEventListener("click", event => {
+    const button = event.target.closest("[data-favourite]");
+    if (button) toggleFavourite(button.dataset.favourite);
+  });
+  els.detail.addEventListener("click", event => {
+    const button = event.target.closest("[data-favourite]");
+    if (button) toggleFavourite(button.dataset.favourite);
+  });
   els.back.addEventListener("click", () => { history.back(); });
   els.cook.addEventListener("click", toggleCookMode);
   window.addEventListener("hashchange", route);
