@@ -1,5 +1,21 @@
 [
   {
+    "slug": "maltese-baked-potatoes",
+    "title": "Maltese Baked Potatoes in Olive Oil, Fennel Seeds and Roasted Olives",
+    "image": "images/maltese-baked-potatoes.jpg",
+    "tags": [
+      "side",
+      "veggie",
+      "slow"
+    ],
+    "time": 75,
+    "servings": 6,
+    "source": "https://www.sbs.com.au/food/recipe/maltese-baked-potatoes/aub672mdj",
+    "video": "https://www.sbs.com.au/ondemand/tv-series/shane-delias-malta/season-1/shane-delias-malta-s1-ep4/2469866563622",
+    "book": null,
+    "updated": 1793668341945.2808
+  },
+  {
     "slug": "borlotti-beans",
     "title": "Borlotti Beans",
     "image": "images/borlotti-beans.jpg",
