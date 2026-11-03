@@ -22,6 +22,7 @@ function decodeHtml(value = "") {
     .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
     .replace(/&nbsp;/gi, " ")
     .replace(/&amp;/gi, "&")
+    .replace(/&apos;/gi, "'")
     .replace(/&quot;/gi, '"')
     .replace(/&#(?:0?39|x27);/gi, "'")
     .replace(/&lt;/gi, "<")
@@ -29,6 +30,9 @@ function decodeHtml(value = "") {
 }
 
 function stripHtml(value = "") {
+  if (Array.isArray(value)) value = value.map(item => item && typeof item === "object" ? item.name || item.text || "" : item).join(", ");
+  else if (value && typeof value === "object") value = value.name || value.text || "";
+  value = String(value || "");
   return decodeHtml(value)
     .replace(/<br\s*\/?>/gi, "\n")
     .replace(/<\/p>|<\/li>|<\/div>/gi, "\n")

@@ -1,5 +1,182 @@
 [
   {
+    "slug": "sea-urchin-zucchini-spaghetti",
+    "title": "Spaghetti with sea urchin, zucchini, caper and fel fel",
+    "image": "images/sea-urchin-zucchini-spaghetti.jpg",
+    "tags": [
+      "mains",
+      "seafood",
+      "pasta",
+      "quick"
+    ],
+    "time": 30,
+    "servings": 10,
+    "source": "https://www.sbs.com.au/food/recipe/spaghetti-sea-urchin-caper-fel-fel/wmmekib4b",
+    "video": "https://www.sbs.com.au/ondemand/tv-series/shane-delias-malta/season-1/shane-delias-malta-s1-ep3/2466821187826",
+    "book": null,
+    "updated": 1793679419809.7605
+  },
+  {
+    "slug": "cured-tuna-sweet-sour-sauce",
+    "title": "Cured tuna with Maltese sweet and sour sauce",
+    "image": "images/cured-tuna-sweet-sour-sauce.jpg",
+    "tags": [
+      "mains",
+      "seafood",
+      "slow"
+    ],
+    "time": 200,
+    "servings": 4,
+    "source": "https://www.sbs.com.au/food/recipe/cured-tuna-sweet-sour-sauce/pz8q5viw8",
+    "video": "https://www.sbs.com.au/ondemand/tv-series/shane-delias-malta/season-1/shane-delias-malta-s1-ep6/2473787459953",
+    "book": null,
+    "updated": 1793679419793.8389
+  },
+  {
+    "slug": "gozitan-farmers-salad",
+    "title": "Gozitan farmer's salad, fresh cheese, pomegranates and cucumber",
+    "image": "images/gozitan-farmers-salad.jpg",
+    "tags": [
+      "side",
+      "veggie",
+      "quick"
+    ],
+    "time": 25,
+    "servings": 4,
+    "source": "https://www.sbs.com.au/food/recipe/gozitan-farmers-salad/phstjkh3d",
+    "video": "https://www.sbs.com.au/ondemand/tv-series/shane-delias-malta/season-1/shane-delias-malta-s1-ep6/2473787459953",
+    "book": null,
+    "updated": 1793679353173.8535
+  },
+  {
+    "slug": "nannu-delias-braised-rabbit",
+    "title": "Nannu Delia’s braised rabbit",
+    "image": "images/nannu-delias-braised-rabbit.jpg",
+    "tags": [
+      "mains",
+      "meat",
+      "slow"
+    ],
+    "time": 200,
+    "servings": 4,
+    "source": "https://www.sbs.com.au/food/recipe/nannu-delias-braised-rabbit/3d8q1w3go",
+    "video": "https://www.sbs.com.au/ondemand/tv-series/shane-delias-malta/season-1/shane-delias-malta-s1-ep5/2471846467998",
+    "book": null,
+    "updated": 1793679353172.14
+  },
+  {
+    "slug": "wild-cumin-carob-frozen-nougat",
+    "title": "Wild cumin, honey meringue with carob frozen nougat",
+    "image": "images/wild-cumin-carob-frozen-nougat.jpg",
+    "tags": [
+      "sweet",
+      "slow"
+    ],
+    "time": 540,
+    "servings": 6,
+    "source": "https://www.sbs.com.au/food/recipe/cumin-honey-meringue-carob-frozen-nougat/th5oqf4g3",
+    "video": "https://www.sbs.com.au/ondemand/tv-series/shane-delias-malta/season-1/shane-delias-malta-s1-ep5/2471846467998",
+    "book": null,
+    "updated": 1793679353171.5762
+  },
+  {
+    "slug": "bagilla-spring-beans-marjoram",
+    "title": "Bagilla with spring beans and marjoram",
+    "image": "images/bagilla-spring-beans-marjoram.jpg",
+    "tags": [
+      "side",
+      "veggie",
+      "slow"
+    ],
+    "time": 75,
+    "servings": 4,
+    "source": "https://www.sbs.com.au/food/recipe/bagilla/wavluyi2x",
+    "video": "https://www.sbs.com.au/ondemand/tv-series/shane-delias-malta/season-1/shane-delias-malta-s1-ep4/2469866563622",
+    "book": null,
+    "updated": 1793679353170.6162
+  },
+  {
+    "slug": "mozzarella-sage-anchovy-sfineg",
+    "title": "Mozzarella, sage and anchovy balls (Sfineğ)",
+    "image": "images/mozzarella-sage-anchovy-sfineg.jpg",
+    "tags": [
+      "side",
+      "seafood",
+      "slow"
+    ],
+    "time": 205,
+    "servings": 25,
+    "source": "https://www.sbs.com.au/food/recipe/mozzarella-sage-anchovy-balls-sfineg/s2j994ztq",
+    "video": "https://www.sbs.com.au/ondemand/tv-series/shane-delias-malta/season-1/shane-delias-malta-s1-ep3/2466821187826",
+    "book": null,
+    "updated": 1793679353169.0154
+  },
+  {
+    "slug": "fig-ricotta-almond-qassatat",
+    "title": "Fig, ricotta and almond savoury pastries (Qassatat)",
+    "image": "images/fig-ricotta-almond-qassatat.jpg",
+    "tags": [
+      "veggie",
+      "brunch",
+      "slow"
+    ],
+    "time": 220,
+    "servings": 15,
+    "source": "https://www.sbs.com.au/food/recipe/fig-ricotta-almond-pastries-qassatat/jrf5g96py",
+    "video": "https://www.sbs.com.au/ondemand/tv-series/shane-delias-malta/season-1/shane-delias-malta-s1-ep2/2465420355802",
+    "book": null,
+    "updated": 1793679353168.1848
+  },
+  {
+    "slug": "maltese-potato-corned-beef-patties",
+    "title": "Maltese bread crumbed potato and corned beef patties",
+    "image": "images/maltese-potato-corned-beef-patties.jpg",
+    "tags": [
+      "side",
+      "meat",
+      "slow"
+    ],
+    "time": 75,
+    "servings": 24,
+    "source": "https://www.sbs.com.au/food/recipe/maltese-potato-corned-beef-patties/mq1jkigrc",
+    "video": "https://www.sbs.com.au/ondemand/tv-series/shane-delias-malta/season-1/shane-delias-malta-s1-ep2/2465420355802",
+    "book": null,
+    "updated": 1793679353167.1096
+  },
+  {
+    "slug": "red-wine-braised-octopus",
+    "title": "Red wine braised octopus and sweet spices (Stuffat tal quarnit)",
+    "image": "images/red-wine-braised-octopus.jpg",
+    "tags": [
+      "mains",
+      "seafood",
+      "slow"
+    ],
+    "time": 115,
+    "servings": 5,
+    "source": "https://www.sbs.com.au/food/recipe/red-wine-braised-octopus/il52uwdws",
+    "video": "https://www.sbs.com.au/ondemand/tv-series/shane-delias-malta/season-1/shane-delias-malta-s1-ep1/2463019587567",
+    "book": null,
+    "updated": 1793679353166.0547
+  },
+  {
+    "slug": "maltese-rice-pork-sausage",
+    "title": "Maltese rice with pork sausage",
+    "image": "images/maltese-rice-pork-sausage.jpg",
+    "tags": [
+      "mains",
+      "meat",
+      "rice",
+      "slow"
+    ],
+    "time": 70,
+    "servings": 6,
+    "source": "https://www.sbs.com.au/food/recipe/maltese-rice-pork-sausage/yjatikj2m",
+    "video": "https://www.sbs.com.au/ondemand/tv-series/shane-delias-malta/season-1/shane-delias-malta-s1-ep1/2463019587567",
+    "book": null,
+    "updated": 1793679353164.997
+  },
+  {
     "slug": "eriks-eggplant-pasta",
     "title": "Erik's Eggplant Pasta",
     "image": "images/eriks-eggplant-pasta.jpg",

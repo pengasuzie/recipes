@@ -13,7 +13,8 @@ async function test() {
       "@context": "https://schema.org",
       "@type": "Recipe",
       name: "Tomato Toast",
-      author: { "@type": "Person", name: "Test Cook" },
+      author: [{ "@type": "Person", name: "Test Cook" }],
+      description: "Chef&apos;s quick toast.",
       recipeYield: "2 servings",
       recipeIngredient: ["2 tomatoes", "4 slices bread"],
       recipeInstructions: [{ "@type": "HowToStep", text: "Toast the bread." }, { "@type": "HowToStep", text: "Add tomatoes." }],
@@ -21,6 +22,8 @@ async function test() {
     })}</script></head><body></body></html>`;
   const parsed = extractWebsiteData(html, "https://example.com/toast");
   assert.equal(parsed.title, "Tomato Toast");
+  assert.equal(parsed.author, "Test Cook");
+  assert.equal(parsed.description, "Chef's quick toast.");
   assert.deepEqual(parsed.ingredients, ["2 tomatoes", "4 slices bread"]);
   assert.deepEqual(parsed.instructions, ["Toast the bread.", "Add tomatoes."]);
   assert.equal(parsed.image_candidates[0].url, "https://example.com/toast.jpg");
