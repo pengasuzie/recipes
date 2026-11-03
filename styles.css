@@ -315,16 +315,21 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 /* Detail view */
 #detail-view { padding-bottom: 42px; }
 .hero {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: -4px 0 22px;
+  border: 7px solid rgba(255, 255, 255, 0.9);
+  border-radius: 26px;
+  background: var(--blue-soft);
+  box-shadow: var(--shadow);
+  color: var(--blue);
+}
+.hero.no-photo {
   display: flex;
   aspect-ratio: 4 / 3;
   align-items: center;
   justify-content: center;
-  margin: -4px 0 22px;
-  border: 7px solid rgba(255, 255, 255, 0.9);
-  border-radius: 26px;
-  background: var(--blue-soft) center/cover no-repeat;
-  box-shadow: var(--shadow);
-  color: var(--blue);
 }
 .hero.no-photo::after {
   content: "no photo yet";
@@ -462,7 +467,7 @@ body.cook-mode .book-credit { color: #aab7d4; }
   .card-body { min-height: 96px; padding: 13px 15px 15px; }
   .card-title { font-size: 17px; }
   .card-meta { font-size: 12px; }
-  .hero { aspect-ratio: 16 / 10; }
+  .hero.no-photo { aspect-ratio: 16 / 10; }
   .notes { padding: 24px 28px; }
 }
 

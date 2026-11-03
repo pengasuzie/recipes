@@ -90,6 +90,7 @@ When Bruce pastes an Instagram URL, YouTube URL, website URL, or raw recipe text
 3. **Pick tags from the existing vocabulary** in `recipes/index.json`: `mains`, `veggie`, `meat`, `seafood`, `fish`, `pasta`, `rice`, `side`, `brunch`, `sweet`, `quick` (≤30 min), `slow` (>60 min). Add new tags sparingly.
 
 4. **Grab the recipe photos.** All paths below are pure HTTP — no browser needed. Save the best dish image as the hero at `images/<slug>.jpg`. Also download every other useful in-article photo of the same dish or its preparation as `images/<slug>-2.jpg`, `images/<slug>-3.jpg`, etc., and list those additional images in frontmatter as `photos: [images/<slug>-2.jpg, ...]`. Exclude logos, icons, decorative graphics, author portraits, ads and cards for unrelated recipes.
+   - Preserve the chosen photo's natural composition and aspect ratio. Do not crop or zoom a strong finished-dish photo merely to make it landscape; keep portrait photos portrait when that framing shows the dish best.
    - **Instagram:** download carousel food/process slides immediately because Instagram CDN URLs expire. Use the strongest finished-dish image as the hero and keep the remaining relevant slides in `photos:`. For a Reel, keep its cover plus a small set of distinct, useful frames when they show ingredients, a key technique or the finished dish; do not save near-duplicate frames.
    - **YouTube:** default the hero to `https://img.youtube.com/vi/<videoId>/maxresdefault.jpg` (fall back to `hqdefault.jpg` if 404), unless a video frame shows the finished dish more clearly. Download the video with `yt-dlp` and use `ffmpeg` to capture a small set of distinct frames showing the finished dish and genuinely useful process stages. Put the additional frames in `photos:` and avoid near-duplicates.
    - **Website:** read `meta[property="og:image"]` from the curled HTML. Fall back to the largest in-page `<img>` if absent.
@@ -122,6 +123,7 @@ When Bruce pastes/attaches an image — either as a direct attachment or an imag
    - Image URL → `curl -sL -o images/<slug>.jpg "<url>"`.
    - Direct attachment → write the binary to `images/<slug>.jpg` (overwrite if it exists).
    - Always `Read` the saved jpg to verify it's the dish, not a logo/avatar/wrong recipe.
+   - Keep the original aspect ratio and framing. Do not zoom, crop a portrait into landscape, or otherwise cut off a well-composed dish photo.
 
 3. **Apply any text changes Bruce mentioned** (add an ingredient, fix a step, change servings, etc.). If he didn't ask for any text changes, leave the body alone — just swap the image.
 

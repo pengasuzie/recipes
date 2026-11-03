@@ -4,7 +4,7 @@ image: images/spinach-basil-pesto-pasta.jpg
 tags: [mains, veggie, pasta, quick]
 time: 20
 servings: 4
-source: https://github.com/pengasuzie/recipes
+source: https://pengasuzie.github.io/recipes/#/recipe/spinach-basil-pesto-pasta
 ---
 
 A loose, punchy spinach-and-basil pesto pasta, finished with fresh ricotta and extra Parmesan.

@@ -363,7 +363,7 @@ async function renderDetail(slug) {
     }
   } catch (e) {}
   const img = recipe.image
-    ? `<div class="hero" style="background-image:url('${recipe.image}')"></div>`
+    ? `<img class="hero" src="${escapeHtml(recipe.image)}" alt="${escapeHtml(recipe.title)}" fetchpriority="high">`
     : `<div class="hero no-photo"></div>`;
   const tagsHtml = (recipe.tags || []).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join("");
   const meta = [recipe.time ? `${recipe.time} min` : null, recipe.servings ? `serves ${recipe.servings}` : null].filter(Boolean).join(" · ");

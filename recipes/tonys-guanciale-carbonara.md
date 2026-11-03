@@ -4,7 +4,7 @@ image: images/tonys-guanciale-carbonara.jpg
 tags: [mains, pasta, meat, quick]
 time: 25
 servings: 1
-source: https://github.com/pengasuzie/recipes
+source: https://pengasuzie.github.io/recipes/#/recipe/tonys-guanciale-carbonara
 ---
 
 ## Ingredients

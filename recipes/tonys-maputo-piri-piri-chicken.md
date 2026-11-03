@@ -4,7 +4,7 @@ image: images/tonys-maputo-piri-piri-chicken.jpg
 tags: [mains, meat, slow]
 time: 300
 servings: 4
-source: https://github.com/pengasuzie/recipes
+source: https://pengasuzie.github.io/recipes/#/recipe/tonys-maputo-piri-piri-chicken
 ---
 
 ## Ingredients
