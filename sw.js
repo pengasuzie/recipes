@@ -1,4 +1,4 @@
-const VERSION = "v16";
+const VERSION = "v17";
 const CACHE = `recipes-${VERSION}`;
 const SHELL = [
   "./",
@@ -9,6 +9,7 @@ const SHELL = [
   "./recipes/index.json",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
+  "./icons/icon.svg",
   "./icons/apple-touch-icon.png",
 ];
 
