@@ -67,6 +67,13 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
+  transition: color 160ms ease, font-size 160ms ease, letter-spacing 160ms ease;
+}
+#app-title.compact {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 .icon-btn {
   display: inline-flex;

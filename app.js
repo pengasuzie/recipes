@@ -67,6 +67,44 @@ const els = {
   addPanel: $("#add-panel"),
 };
 
+let detailHeaderCleanup = null;
+
+function setHeaderTitle(text, compact = false) {
+  els.title.textContent = text;
+  els.title.classList.toggle("compact", compact);
+}
+
+function clearDetailHeader() {
+  if (detailHeaderCleanup) detailHeaderCleanup();
+  detailHeaderCleanup = null;
+}
+
+function watchDetailTitle(recipeTitle) {
+  clearDetailHeader();
+  const heading = els.detail.querySelector(".detail-title");
+  if (!heading) return;
+
+  let frame = null;
+  const update = () => {
+    frame = null;
+    const headerBottom = $("#app-header").getBoundingClientRect().bottom;
+    const titleHasPassed = heading.getBoundingClientRect().bottom <= headerBottom + 8;
+    setHeaderTitle(titleHasPassed ? recipeTitle : "Recipes", titleHasPassed);
+  };
+  const scheduleUpdate = () => {
+    if (frame === null) frame = requestAnimationFrame(update);
+  };
+
+  window.addEventListener("scroll", scheduleUpdate, { passive: true });
+  window.addEventListener("resize", scheduleUpdate);
+  update();
+  detailHeaderCleanup = () => {
+    window.removeEventListener("scroll", scheduleUpdate);
+    window.removeEventListener("resize", scheduleUpdate);
+    if (frame !== null) cancelAnimationFrame(frame);
+  };
+}
+
 const SB = { url: "https://fmqsttxwgstzhjwfnxnk.supabase.co", key: "sb_publishable_SR0gJiUU3BbRHPUUrG0E8w_HCSRRyzh" };
 const REQUEST_SESSION = "recipes:session";
 const requestState = { busy: false, email: "", refreshing: null };
@@ -298,6 +336,7 @@ async function renderDetail(slug) {
     ${gallery}
     ${credit}
   `;
+  if (!els.detail.hidden && location.hash === `#/recipe/${slug}`) watchDetailTitle(recipe.title);
 }
 
 function stripFrontmatter(text) {
@@ -309,18 +348,20 @@ function stripFrontmatter(text) {
 }
 
 function showList() {
+  clearDetailHeader();
   els.list.hidden = false;
   els.detail.hidden = true;
   els.back.classList.add("invisible");
   els.cook.classList.add("invisible");
   els.add.classList.remove("invisible");
-  els.title.textContent = "Recipes";
+  setHeaderTitle("Recipes");
   document.body.classList.remove("cook-mode");
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
 
 function showDetail(slug) {
+  clearDetailHeader();
   els.list.hidden = true;
   els.detail.hidden = false;
   els.back.classList.remove("invisible");
@@ -328,8 +369,7 @@ function showDetail(slug) {
   els.add.classList.add("invisible");
   els.addPanel.hidden = true;
   els.add.setAttribute("aria-expanded", "false");
-  const recipe = recipes.find(r => r.slug === slug);
-  els.title.textContent = recipe ? recipe.title : "Recipe";
+  setHeaderTitle("Recipes");
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
