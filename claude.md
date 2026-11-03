@@ -113,7 +113,7 @@ When Bruce pastes/attaches an image — either as a direct attachment or an imag
 
 1. **Identify the target recipe** from the accompanying text. Try in order:
    - Exact slug match in `recipes/<slug>.md`.
-   - Fuzzy title match: scan `recipes/index.json` titles for a match against keywords in Bruce's text (e.g. "cannelloni" → `cannelloni-enchiladas-salsa-roja`).
+   - Fuzzy title match: scan `recipes/index.json` titles for a match against keywords in Bruce's text (e.g. "prawn lasagne" → `prawn-lasagne-habanero-oil`).
    - If two or more recipes plausibly match, **ask which one** before writing.
    - If nothing matches, treat it as a new recipe and run the standard pipeline above, using the pasted image as the hero.
 

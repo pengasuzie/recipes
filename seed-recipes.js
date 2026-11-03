@@ -30,7 +30,6 @@ const recipes = [
   { slug: "oyster-mushroom-noodles-caraway-onions", title: "Oyster Mushroom Noodles with Caramelised Caraway Onions", tags: ["mains", "veggie", "quick"], time: 30, servings: 4, source: "https://thehappyfoodie.co.uk/articles/cook-from-the-book-mezcla/" },
   { slug: "confit-squid-aubergine-pasta", title: "Confit Squid & Aubergine Pasta", tags: ["mains", "seafood", "pasta", "slow"], time: 90, servings: 4, source: "https://thehappyfoodie.co.uk/articles/10-dishes-youll-discover-in-ixta-belfrages-mezcla/" },
   { slug: "torta-ahogada", title: "Torta Ahogada (Drowned Sandwiches)", tags: ["mains", "meat", "slow"], time: 75, servings: 4, source: "https://thehappyfoodie.co.uk/articles/10-dishes-youll-discover-in-ixta-belfrages-mezcla/" },
-  { slug: "cannelloni-enchiladas-salsa-roja", title: "Cannelloni Enchiladas with Salsa Roja", tags: ["mains", "veggie", "pasta", "slow"], time: 90, servings: 6, source: "https://thehappyfoodie.co.uk/articles/10-dishes-youll-discover-in-ixta-belfrages-mezcla/" },
 ];
 
 const BOOK = "Mezcla by Ixta Belfrage (Ebury Press, 2022)";
