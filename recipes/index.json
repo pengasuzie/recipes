@@ -1,5 +1,21 @@
 [
   {
+    "slug": "spicy-spanish-eggs",
+    "title": "Spicy Spanish Eggs",
+    "image": "images/spicy-spanish-eggs.jpg",
+    "tags": [
+      "brunch",
+      "meat",
+      "slow"
+    ],
+    "time": 65,
+    "servings": 4,
+    "source": null,
+    "video": null,
+    "book": null,
+    "updated": 1793687371417.9739
+  },
+  {
     "slug": "sea-urchin-zucchini-spaghetti",
     "title": "Spaghetti with sea urchin, zucchini, caper and fel fel",
     "image": "images/sea-urchin-zucchini-spaghetti.jpg",
