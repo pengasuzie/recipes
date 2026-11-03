@@ -1,5 +1,21 @@
 [
   {
+    "slug": "baghdad-eggs",
+    "title": "Baghdad Eggs",
+    "image": "images/baghdad-eggs.jpg",
+    "tags": [
+      "brunch",
+      "veggie",
+      "quick"
+    ],
+    "time": 10,
+    "servings": 1,
+    "source": "https://filbertsandchocolate.blogspot.com/2007/01/baghdad-eggs.html",
+    "video": null,
+    "book": null,
+    "updated": 1793687682868.8706
+  },
+  {
     "slug": "spicy-spanish-eggs",
     "title": "Spicy Spanish Eggs",
     "image": "images/spicy-spanish-eggs.jpg",
