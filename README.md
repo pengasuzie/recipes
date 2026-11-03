@@ -41,7 +41,7 @@ The queue is defined in `supabase/migrations/20261103000100_recipe_requests.sql`
 ```bash
 node tools/recipe-requests.js list
 node tools/recipe-requests.js claim <uuid> requests-work/<uuid>
-node tools/extract-recipe.js <url> requests-work/<uuid> # writes source.json, media candidates and draft.md
+node tools/extract-recipe.js <url> requests-work/<uuid> # writes enriched source.json, ranked media candidates and draft.md
 node tools/validate-recipe.js recipes/<slug>.md
 node tools/recipe-requests.js ready requests-work/<uuid>/request.json <slug>
 ```

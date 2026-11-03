@@ -100,6 +100,74 @@ function wprmList(html, containerClass) {
     .filter(Boolean);
 }
 
+function recipeSection(html, heading) {
+  const match = new RegExp(`<h2\\b[^>]*>\\s*${heading}\\s*</h2>`, "i").exec(html);
+  if (!match) return null;
+  const start = match.index + match[0].length;
+  const end = html.indexOf("</section>", start);
+  return { headingStart: match.index, start, end: end < 0 ? html.length : end, html: html.slice(start, end < 0 ? html.length : end) };
+}
+
+function visibleRecipeData(html) {
+  const ingredientsSection = recipeSection(html, "Ingredients");
+  const instructionsSection = recipeSection(html, "Instructions");
+  const ingredientGroups = [];
+
+  if (ingredientsSection) {
+    let pendingName = "";
+    const blocks = ingredientsSection.html.matchAll(/<(p|ul)\b[^>]*>([\s\S]*?)<\/\1>/gi);
+    for (const block of blocks) {
+      if (block[1].toLowerCase() === "p") {
+        pendingName = stripHtml(block[2]).replace(/\s+/g, " ").trim();
+        continue;
+      }
+      const items = [...block[2].matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)]
+        .map(item => stripHtml(item[1]).replace(/\s+/g, " ").trim())
+        .filter(Boolean);
+      if (items.length) ingredientGroups.push({ name: pendingName, items });
+      pendingName = "";
+    }
+  }
+
+  let instructions = [];
+  if (instructionsSection) {
+    const list = instructionsSection.html.match(/<ol\b[^>]*>([\s\S]*?)<\/ol>/i);
+    if (list) {
+      instructions = [...list[1].matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)]
+        .map(item => stripHtml(item[1]).replace(/\s+/g, " ").trim())
+        .filter(Boolean);
+    }
+  }
+
+  const notes = [];
+  if (ingredientsSection && instructionsSection && ingredientsSection.end < instructionsSection.headingStart) {
+    const between = html.slice(ingredientsSection.end + "</section>".length, instructionsSection.headingStart);
+    for (const paragraph of between.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)) {
+      const text = stripHtml(paragraph[1]).replace(/\s+/g, " ").trim();
+      if (text && !notes.includes(text)) notes.push(text);
+    }
+  }
+
+  return {
+    ingredient_groups: ingredientGroups,
+    ingredients: ingredientGroups.flatMap(group => group.items),
+    instructions,
+    notes,
+  };
+}
+
+function embeddedVideoUrl(html, recipe) {
+  const structured = imageUrls(recipe && recipe.video && (recipe.video.contentUrl || recipe.video.embedUrl))[0];
+  if (structured) return structured;
+  const ingredientsSection = recipeSection(html, "Ingredients");
+  const relevantHtml = ingredientsSection ? html.slice(ingredientsSection.headingStart) : html;
+  const onDemandUrls = [...relevantHtml.matchAll(/https:\/\/www\.sbs\.com\.au\/ondemand\/tv-series\/[^"'\\<>&]+/gi)]
+    .map(match => decodeHtml(match[0].replace(/\\u0026/g, "&").replace(/\\\//g, "/")));
+  const episode = onDemandUrls.find(url => /\/season-\d+\//i.test(url));
+  if (episode || onDemandUrls[0]) return episode || onDemandUrls[0];
+  return meta(html, "og:video:url") || meta(html, "og:video") || "";
+}
+
 function extractImageCandidates(html, recipe, pageTitle) {
   const candidates = [];
   const add = (url, alt = "", score = 0) => {
@@ -147,10 +215,13 @@ function extractImageCandidates(html, recipe, pageTitle) {
 
 function extractWebsiteData(html, url) {
   const recipe = recipeJsonLd(html);
+  const visible = visibleRecipeData(html);
   const wprmName = html.match(/class=["'][^"']*wprm-recipe-name[^"']*["'][^>]*>([\s\S]*?)<\//i);
   const title = stripHtml((recipe && recipe.name) || (wprmName && wprmName[1]) || meta(html, "og:title") || "");
-  const ingredients = recipe ? (recipe.recipeIngredient || []).map(stripHtml).filter(Boolean) : wprmList(html, "wprm-recipe-ingredients-container");
-  const instructions = recipe ? instructionText(recipe.recipeInstructions).filter(Boolean) : wprmList(html, "wprm-recipe-instructions-container");
+  const structuredIngredients = recipe ? (recipe.recipeIngredient || []).map(stripHtml).filter(Boolean) : [];
+  const structuredInstructions = recipe ? instructionText(recipe.recipeInstructions).filter(Boolean) : [];
+  const ingredients = visible.ingredients.length ? visible.ingredients : structuredIngredients.length ? structuredIngredients : wprmList(html, "wprm-recipe-ingredients-container");
+  const instructions = visible.instructions.length ? visible.instructions : structuredInstructions.length ? structuredInstructions : wprmList(html, "wprm-recipe-instructions-container");
   const servingsMatch = html.match(/class=["'][^"']*wprm-recipe-servings(?:\s|["'])[^>]*>([^<]+)/i);
   return {
     source_type: "website",
@@ -163,8 +234,10 @@ function extractWebsiteData(html, url) {
     cook_time: recipe && recipe.cookTime || "",
     total_time: recipe && recipe.totalTime || "",
     ingredients,
+    ingredient_groups: visible.ingredient_groups,
     instructions,
-    video: imageUrls(recipe && recipe.video && (recipe.video.contentUrl || recipe.video.embedUrl))[0] || "",
+    notes: visible.notes,
+    video: embeddedVideoUrl(html, recipe),
     image_candidates: extractImageCandidates(html, recipe, title),
   };
 }
@@ -176,12 +249,48 @@ function safeExtension(url) {
   } catch (_) { return ".jpg"; }
 }
 
+function imageDimensions(filename) {
+  try {
+    const buffer = fs.readFileSync(filename);
+    if (buffer.length >= 24 && buffer.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))) {
+      return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) };
+    }
+    if (buffer.length >= 10 && ["GIF87a", "GIF89a"].includes(buffer.subarray(0, 6).toString("ascii"))) {
+      return { width: buffer.readUInt16LE(6), height: buffer.readUInt16LE(8) };
+    }
+    if (buffer.length >= 4 && buffer[0] === 0xff && buffer[1] === 0xd8) {
+      let offset = 2;
+      const startOfFrame = new Set([0xc0, 0xc1, 0xc2, 0xc3, 0xc5, 0xc6, 0xc7, 0xc9, 0xca, 0xcb, 0xcd, 0xce, 0xcf]);
+      while (offset + 9 < buffer.length) {
+        if (buffer[offset] !== 0xff) { offset++; continue; }
+        const marker = buffer[offset + 1];
+        if (startOfFrame.has(marker)) {
+          return { width: buffer.readUInt16BE(offset + 7), height: buffer.readUInt16BE(offset + 5) };
+        }
+        if (marker === 0xd8 || marker === 0xd9) { offset += 2; continue; }
+        if (offset + 4 > buffer.length) break;
+        const length = buffer.readUInt16BE(offset + 2);
+        if (length < 2) break;
+        offset += length + 2;
+      }
+    }
+  } catch (_) {}
+  return { width: 0, height: 0 };
+}
+
+function imageRank(candidate) {
+  const pixels = Number(candidate.width || 0) * Number(candidate.height || 0);
+  const resolutionBonus = pixels >= 2000000 ? 20 : pixels >= 900000 ? 15 : pixels >= 500000 ? 8 : 0;
+  return Number(candidate.score || 0) + resolutionBonus;
+}
+
 function downloadCandidate(candidate, outputDir, index) {
   const filename = `candidate-${String(index + 1).padStart(2, "0")}${safeExtension(candidate.url)}`;
   const destination = path.join(outputDir, filename);
   const result = command("curl", ["-L", "--fail", "--silent", "--show-error", candidate.url, "-o", destination], { allowFailure: true });
   if (result.status !== 0) return { ...candidate, error: (result.stderr || "download failed").trim() };
-  return { ...candidate, file: filename };
+  const dimensions = imageDimensions(destination);
+  return { ...candidate, file: filename, ...dimensions, bytes: fs.statSync(destination).size };
 }
 
 function findFiles(directory, pattern) {
@@ -328,11 +437,21 @@ function renderDraft(data) {
     `source: ${data.source}`,
   ];
   if (data.video) lines.push(`video: ${data.video}`);
-  lines.push("---", "", "## Ingredients", "");
-  lines.push(...(data.ingredients || []).map(item => `- ${String(item).replace(/\s+/g, " ").trim()}`));
+  lines.push("---", "");
+  if (data.description) lines.push(String(data.description).replace(/\s+/g, " ").trim(), "");
+  lines.push("## Ingredients", "");
+  if ((data.ingredient_groups || []).length) {
+    for (const group of data.ingredient_groups) {
+      if (group.name) lines.push(`### ${String(group.name).replace(/\s+/g, " ").trim()}`, "");
+      lines.push(...(group.items || []).map(item => `- ${String(item).replace(/\s+/g, " ").trim()}`), "");
+    }
+  } else {
+    lines.push(...(data.ingredients || []).map(item => `- ${String(item).replace(/\s+/g, " ").trim()}`));
+  }
   lines.push("", "## Method", "");
   lines.push(...(data.instructions || []).map((item, index) => `${index + 1}. ${String(item).replace(/\s+/g, " ").trim()}`));
   lines.push("", "## My notes", "");
+  lines.push(...(data.notes || []).map(item => `- ${String(item).replace(/\s+/g, " ").trim()}`));
   return { slug, markdown: lines.join("\n") + "\n" };
 }
 
@@ -351,6 +470,13 @@ function extract(url, outputDir, options = {}) {
   } else {
     data = extractSocial(url, outputDir, type, options.noVideo);
   }
+  const viableImages = (data.image_candidates || []).filter(candidate => candidate.file)
+    .sort((a, b) => imageRank(b) - imageRank(a));
+  data.preferred_image = viableImages[0] || null;
+  data.warnings ||= [];
+  if (data.preferred_image && data.preferred_image.width && (data.preferred_image.width < 1000 || data.preferred_image.height < 600)) {
+    data.warnings.push(`Best downloaded image is only ${data.preferred_image.width}x${data.preferred_image.height}; look for a higher-resolution publisher image before publishing.`);
+  }
   fs.writeFileSync(path.join(outputDir, "source.json"), JSON.stringify(data, null, 2) + "\n");
   const draft = renderDraft(data);
   fs.writeFileSync(path.join(outputDir, "draft.md"), draft.markdown);
@@ -366,11 +492,24 @@ if (require.main === module) {
   }
   try {
     const data = extract(url, outputDir, { noVideo: flags.includes("--no-video") });
-    console.log(JSON.stringify({ type: data.source_type, title: data.title, files: outputDir, images: data.image_candidates.length, frames: (data.frame_candidates || []).length }));
+    console.log(JSON.stringify({
+      type: data.source_type,
+      title: data.title,
+      files: outputDir,
+      images: data.image_candidates.length,
+      preferred_image: data.preferred_image && {
+        file: data.preferred_image.file,
+        width: data.preferred_image.width,
+        height: data.preferred_image.height,
+        bytes: data.preferred_image.bytes,
+      },
+      frames: (data.frame_candidates || []).length,
+      warnings: data.warnings,
+    }));
   } catch (error) {
     console.error(error.message);
     process.exitCode = 1;
   }
 }
 
-module.exports = { extract, extractWebsiteData, recipeJsonLd, renderDraft, sourceType, stripHtml };
+module.exports = { extract, extractWebsiteData, imageDimensions, recipeJsonLd, renderDraft, sourceType, stripHtml };
