@@ -1,5 +1,20 @@
 [
   {
+    "slug": "festive-hummus-brussels-sprouts-chestnuts",
+    "title": "Festive Hummus with Roasted Brussels Sprouts & Chestnuts",
+    "image": "images/festive-hummus-brussels-sprouts-chestnuts.jpg",
+    "tags": [
+      "side",
+      "veggie"
+    ],
+    "time": 35,
+    "servings": 8,
+    "source": "https://ottolenghi.co.uk/pages/recipes/festive-hummus-roasted-brussels-sprouts-chestnuts",
+    "video": null,
+    "book": null,
+    "updated": 1793666107496.1636
+  },
+  {
     "slug": "giant-cheese-on-toast-honey-urfa-butter",
     "title": "Giant Cheese on Toast with Honey & Urfa Butter",
     "image": "images/giant-cheese-on-toast-honey-urfa-butter.jpg",
@@ -13,7 +28,7 @@
     "source": "https://www.instagram.com/p/Cq0IqoWO6BP/",
     "video": "https://www.instagram.com/p/Cq0IqoWO6BP/",
     "book": "Mezcla by Ixta Belfrage (Ebury Press, 2022)",
-    "updated": 1793664975167.7021
+    "updated": 1793665007000
   },
   {
     "slug": "thai-chicken-lettuce-wraps-larb-gai",
