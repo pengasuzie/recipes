@@ -11,7 +11,6 @@ const recipesDir = join(root, "recipes");
 if (!existsSync(recipesDir)) mkdirSync(recipesDir, { recursive: true });
 
 const recipes = [
-  { slug: "chicken-pineapple-nduja-bake", title: "Chicken, Pineapple and 'Nduja Bake", tags: ["mains", "meat", "slow"], time: 60, servings: 4, source: "https://thehappyfoodie.co.uk/recipes/ixta-belfrage-chicken-pineapple-and-nduja-bake/" },
   { slug: "prawn-lasagne-habanero-oil", title: "Prawn Lasagne with Habanero Oil", tags: ["mains", "seafood", "pasta", "slow"], time: 90, servings: 6, source: "https://thehappyfoodie.co.uk/recipes/ixta-belfrages-prawn-and-requeijao-lasagne-with-dende-chilli-oil/" },
   { slug: "chiles-rellenos-salsa-roja-risotto", title: "Chiles Rellenos with Salsa Roja Risotto", tags: ["mains", "veggie", "rice", "slow"], time: 90, servings: 4, source: "https://thehappyfoodie.co.uk/recipes/ixta-belfrage-chiles-rellenos-with-salsa-roja-risotto/" },
   { slug: "tomato-salad-tahini-ginger-crumpet-croutons", title: "Tomato Salad with Tahini Ginger Sauce & Crumpet Croutons", tags: ["veggie", "side", "quick"], time: 25, servings: 4, source: "https://www.nigella.com/recipes/guests/tomato-tahini-and-ginger-salad-with-crumpet-croutons" },
