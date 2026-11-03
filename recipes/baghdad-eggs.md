@@ -5,6 +5,7 @@ tags: [brunch, veggie, quick]
 time: 10
 servings: 1
 source: https://filbertsandchocolate.blogspot.com/2007/01/baghdad-eggs.html
+book: Recipe by Stephanie Alexander
 ---
 
 Stephanie Alexander's simple fried eggs with garlic and lemon, seasoned with cumin and fresh mint and served on warm flatbread.
